@@ -65,7 +65,7 @@ The blog uses several configuration files for easy customization:
 
 ## 🎨 Available Themes
 
-The blog includes 13 pre-built color themes:
+The blog includes 15 pre-built color themes:
 
 ### Gruvbox Family
 - **Gruvbox Dark** - Warm retro colors (default)
@@ -83,7 +83,11 @@ The blog includes 13 pre-built color themes:
 - **Tokyo Night** - Urban neon-inspired dark theme
 - **Tokyo Night Storm** - Better contrast variant
 
-### Classic Themes
+### Classic Terminal Themes
+- **Classic Terminal Green** - Authentic monochrome green terminal
+- **Classic Terminal Amber** - Authentic monochrome amber terminal
+
+### Modern Themes
 - **Cyberpunk** - Neon colors on black background
 - **Terminal Green** - Classic green-on-black terminal
 - **Dracula** - Popular dark theme with purple accents

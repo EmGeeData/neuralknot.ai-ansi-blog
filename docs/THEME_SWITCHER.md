@@ -37,10 +37,14 @@ The color variables have been extracted from `src/styles/global.css` into separa
 
 | Theme                        | Description                                      |
 | ---------------------------- | ------------------------------------------------ |
-| **gruvbox-dark.css**         | Your current theme - warm, retro dark colors     |
+| **gruvbox-dark.css**         | Warm, retro dark colors (default)               |
 | **gruvbox-light.css**        | Light version with cream background              |
+| **gruvbox-material-dark.css** | Softer contrast for extended coding sessions    |
+| **gruvbox-material-hard.css** | Higher contrast Material variant                |
 | **cyberpunk.css**            | Neon colors on pure black background             |
 | **terminal-green.css**       | Classic green-on-black terminal                  |
+| **classic-terminal-green.css** | Authentic monochrome green terminal            |
+| **classic-terminal-amber.css** | Authentic monochrome amber terminal            |
 | **dracula.css**              | Popular dark theme with purple accents           |
 | **catppuccin-latte.css**     | Light pastel theme with soft, warm colors        |
 | **catppuccin-frappe.css**    | Dark pastel theme with gentle contrast           |

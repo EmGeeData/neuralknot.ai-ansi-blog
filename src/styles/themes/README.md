@@ -2,7 +2,7 @@
 
 ## 🎨 Available Themes
 
-This directory contains color themes for your BBS terminal blog. Each theme defines the same CSS custom properties with different color values.
+This directory contains color themes for your BBS terminal blog. Each theme defines the same CSS custom properties with different color values. The collection includes 15 themes ranging from authentic monochrome terminals to modern developer palettes.
 
 ### Theme Files
 
@@ -14,6 +14,8 @@ This directory contains color themes for your BBS terminal blog. Each theme defi
 | **Gruvbox Material Hard** | `gruvbox-material-hard.css` | Higher contrast Material variant |
 | **Cyberpunk** | `cyberpunk.css` | Neon colors for a cyberpunk aesthetic |
 | **Terminal Green** | `terminal-green.css` | Classic green terminal on black |
+| **Classic Terminal Green** | `classic-terminal-green.css` | Authentic monochrome green terminal |
+| **Classic Terminal Amber** | `classic-terminal-amber.css` | Authentic monochrome amber terminal |
 | **Dracula** | `dracula.css` | Popular dark theme with purple accents |
 | **Catppuccin Latte** | `catppuccin-latte.css` | Light pastel theme with warm tones |
 | **Catppuccin Frappé** | `catppuccin-frappe.css` | Dark pastel theme with soft contrast |
@@ -163,6 +165,18 @@ To create your own theme:
 - **Vibe**: Stormy night with better contrast
 - **Background**: Slightly lighter than Tokyo Night
 - **Accents**: Same vibrant colors with enhanced readability
+
+### Classic Terminal Green
+- **Vibe**: Authentic 1970s-80s terminal experience
+- **Background**: Pure black/very dark grey progression
+- **Accents**: All shades of classic phosphor green
+- **Historical**: Recreates early computer terminals and mainframes
+
+### Classic Terminal Amber
+- **Vibe**: Classic amber monochrome terminal nostalgia
+- **Background**: Pure black/very dark grey progression  
+- **Accents**: All shades of warm amber/orange terminal colors
+- **Historical**: IBM 3270 and early PC terminal aesthetic
 
 ## 🔧 Advanced Theme Features
 

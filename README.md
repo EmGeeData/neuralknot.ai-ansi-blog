@@ -15,14 +15,15 @@ A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, cover
 
 ## 🎨 Available Themes
 
-Switch between 13 carefully crafted color themes:
+Switch between 15 carefully crafted color themes:
 
 | Theme Family | Variants | Description |
 |-------------|----------|-------------|
 | **Gruvbox** | Dark, Light, Material Dark, Material Hard | Warm retro colors with excellent readability |
 | **Catppuccin** | Latte, Frappé, Macchiato, Mocha | Soothing pastel themes from light to dark |
 | **Tokyo Night** | Original, Storm | Urban neon-inspired dark themes |
-| **Classic** | Cyberpunk, Terminal Green, Dracula | Iconic terminal and developer themes |
+| **Classic Terminal** | Green, Amber | Authentic monochrome terminal themes |
+| **Modern** | Cyberpunk, Terminal Green, Dracula | Contemporary terminal and developer themes |
 
 See [docs/THEME_SWITCHER.md](docs/THEME_SWITCHER.md) for switching instructions.
 

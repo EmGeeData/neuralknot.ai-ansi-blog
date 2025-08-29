@@ -8,6 +8,8 @@ const THEMES = {
   'gruvbox-material-hard': 'Gruvbox Material Hard',
   'cyberpunk': 'Cyberpunk',
   'terminal-green': 'Terminal Green',
+  'classic-terminal-green': 'Classic Terminal Green',
+  'classic-terminal-amber': 'Classic Terminal Amber',
   'dracula': 'Dracula',
   'catppuccin-latte': 'Catppuccin Latte',
   'catppuccin-frappe': 'Catppuccin Frappé',
