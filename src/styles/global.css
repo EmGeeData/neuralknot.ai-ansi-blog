@@ -52,7 +52,7 @@ body::before {
   border: double 3px var(--orange);
   padding: 1em;
   margin-bottom: 2em;
-  background: linear-gradient(45deg, var(--bg1), var(--bg2));
+  background: var(--bg0);
   text-align: center;
 }
 
@@ -79,10 +79,10 @@ body::before {
 }
 
 .menu {
-  border: solid 2px var(--yellow);
+  border: solid 3px var(--blue);
   padding: 1.5em;
   margin: 2em 0;
-  background: var(--blue-dim);
+  background: var(--bg0);
 }
 
 .menu-title {
@@ -112,11 +112,11 @@ body::before {
 }
 
 .articles {
-  border: solid 2px var(--green);
+  border: solid 3px var(--green);
   padding: 1.5em;
   margin: 2em 0;
-  background: var(--green-dim);
-  color: var(--bg0);
+  background: var(--bg0);
+  color: var(--fg1);
 }
 
 .articles-title {
@@ -171,9 +171,9 @@ body::before {
 }
 
 .stat-box {
-  border: solid 1px var(--purple);
+  border: solid 2px var(--purple);
   padding: 1em;
-  background: var(--purple-dim);
+  background: var(--bg0);
 }
 
 .stat-title {
@@ -187,10 +187,10 @@ body::before {
 }
 
 .news {
-  border: solid 2px var(--red);
+  border: solid 3px var(--red);
   padding: 1em;
   margin: 2em 0;
-  background: var(--red-dim);
+  background: var(--bg0);
 }
 
 .news-title {

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, FOOTER_CONFIG } from '../../consts';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -64,11 +64,11 @@ const posts = (await getCollection('blog')).sort(
 			</div>
 
 			<div class="footer">
-				<div>Archive Access • Session Active • Browse Mode</div>
-				<div class="blink">Select paper to read<span class="cursor"></span></div>
+				<div>{FOOTER_CONFIG.blog.statusLine}</div>
+				<div class="blink">{FOOTER_CONFIG.blog.promptText}<span class="cursor"></span></div>
 				<div style="margin-top: 1em; font-size: 0.8em;">
-					NeuralKnot.ai BBS © 2024 • Archive System v2.0<br>
-					Total Research Papers: {posts.length} • FidoNet 2:404/1337
+					{FOOTER_CONFIG.common.copyright} • Archive System v2.0<br>
+					Total Research Papers: {posts.length} • {FOOTER_CONFIG.common.fidonet}
 				</div>
 			</div>
 		</div>

@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, FOOTER_CONFIG } from '../consts';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
@@ -72,11 +72,11 @@ const posts = (await getCollection('blog')).sort(
 			</div>
 
 			<div class="footer">
-				<div>Connected at 56k baud • Session Time: 00:12:45 • Credits: 2,048</div>
-				<div class="blink">Press any key to continue<span class="cursor"></span></div>
+				<div>{FOOTER_CONFIG.home.statusLine}</div>
+				<div class="blink">{FOOTER_CONFIG.home.promptText}<span class="cursor"></span></div>
 				<div style="margin-top: 1em; font-size: 0.8em;">
-					NeuralKnot.ai BBS © 2024 • SysOp: AIResearcher • Co-SysOp: DeepMind<br>
-					Powered by GruvNet v2.0 • FidoNet 2:404/1337
+					{FOOTER_CONFIG.common.copyright} • SysOp: {FOOTER_CONFIG.common.sysop} • Co-SysOp: {FOOTER_CONFIG.common.cosysop}<br>
+					Powered by {FOOTER_CONFIG.common.systemName} • {FOOTER_CONFIG.common.fidonet}
 				</div>
 			</div>
 		</div>

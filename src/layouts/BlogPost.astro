@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
+import { FOOTER_CONFIG } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -41,7 +42,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				border: double 3px var(--orange);
 				padding: 1em;
 				margin-bottom: 2em;
-				background: linear-gradient(45deg, var(--bg1), var(--bg2));
+				background: var(--bg0);
 				text-align: center;
 			}
 
@@ -59,10 +60,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			}
 
 			.blog-nav {
-				border: solid 2px var(--yellow);
+				border: solid 3px var(--blue);
 				padding: 1em;
 				margin-bottom: 2em;
-				background: var(--blue-dim);
+				background: var(--bg0);
 				text-align: center;
 			}
 
@@ -323,11 +324,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			</article>
 
 			<div class="blog-footer">
-				<div>Paper Access Complete • Session Active</div>
-				<div class="blink">Ready for next command<span class="cursor"></span></div>
+				<div>{FOOTER_CONFIG.post.statusLine}</div>
+				<div class="blink">{FOOTER_CONFIG.post.promptText}<span class="cursor"></span></div>
 				<div style="margin-top: 1em; font-size: 0.8em;">
-					NeuralKnot.ai Research Archive © 2024<br>
-					Paper: "{title}" • FidoNet 2:404/1337
+					{FOOTER_CONFIG.common.copyright} Research Archive<br>
+					Paper: "{title}" • {FOOTER_CONFIG.common.fidonet}
 				</div>
 			</div>
 		</div>
