@@ -101,7 +101,7 @@ nk-ansi-blog/
 - **Theme system** with 15 themes in `src/styles/themes/` and dynamic switching via `public/theme-switcher.js`
 - **Content management** via Astro's content collections with enhanced SEO schema
 - **CSS organization** with dedicated files for blog posts and cleaner component separation
-- **Perfect DOS VGA font** loaded from Google Fonts for authentic terminal typography
+- **Perfect DOS VGA font** served locally for improved privacy and performance (WOFF2 format, 78% smaller)
 
 ## Key Features
 

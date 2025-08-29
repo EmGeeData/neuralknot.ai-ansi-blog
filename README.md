@@ -7,12 +7,14 @@ A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, cover
 - **BBS Terminal Aesthetic**: Authentic 1980s-90s terminal styling with CP437 encoding
 - **ANSI Art Integration**: ASCII art headers and visual elements
 - **15 Color Themes**: Including Gruvbox, Catppuccin, Tokyo Night, classic terminal themes, and more
-- **Perfect DOS VGA Font**: Authentic retro typography
+- **Local Font Hosting**: Perfect DOS VGA font served locally for privacy and performance
 - **Enhanced SEO**: Comprehensive metadata, structured data, social media optimization
+- **Dynamic Theme Switching**: Live theme preview with localStorage persistence
 - **Responsive Images**: Optimized image handling for all screen sizes
 - **MDX Support**: Interactive content with Markdown + JSX
 - **Fast Performance**: Built on Astro for optimal loading speeds
-- **Clean Architecture**: Organized CSS, centralized configuration, modular design
+- **Centralized Configuration**: Easy content management through external config files
+- **Comprehensive About Page**: Detailed system information with homepage styling
 
 ## 🎨 Available Themes
 
@@ -198,6 +200,30 @@ KNOWLEDGE_BASE = {
 ```
 
 Simply edit these arrays to update the homepage statistics sections.
+
+## 🚀 Recent Improvements
+
+### Performance & Privacy
+- **Local Font Hosting**: Perfect DOS VGA font now served locally (78% smaller with WOFF2 format)
+- **No External Dependencies**: Eliminated Google Fonts for better privacy and GDPR compliance
+- **Optimized Loading**: Font preloading with modern `font-display: swap` strategy
+
+### Content Management
+- **Externalized Configuration**: Recent updates, terminal status, and knowledge base stats now managed through `src/consts.ts`
+- **Enhanced SEO System**: Comprehensive SEO configuration with structured data and social media optimization
+- **Improved Documentation**: Complete guides for content creation, theming, and configuration
+
+### User Experience
+- **Dynamic Theme Switching**: Live theme preview with persistent user preferences
+- **Comprehensive About Page**: Detailed system information using consistent homepage styling
+- **Better Content Organization**: Blog posts properly separated from static pages
+- **Improved Accessibility**: Better semantic HTML structure and screen reader support
+
+### Technical Enhancements
+- **CSS Organization**: Dedicated stylesheets for different page types
+- **Markdown Link Styling**: Fixed styling issues with blog post content links
+- **Content Schema Validation**: Enhanced frontmatter schema with optional SEO fields
+- **Modular Architecture**: Cleaner separation of concerns and easier maintenance
 
 ## 🛠️ Development Commands
 
