@@ -15,11 +15,15 @@ The color variables have been extracted from `src/styles/global.css` into separa
    ```
 3. **Replace** with any of these themes:
    ```css
-   @import './themes/gruvbox-dark.css';    /* Default dark theme */
-   @import './themes/gruvbox-light.css';   /* Light theme */
-   @import './themes/cyberpunk.css';       /* Neon cyberpunk */
-   @import './themes/terminal-green.css';  /* Classic terminal */
-   @import './themes/dracula.css';         /* Popular dark theme */
+   @import './themes/gruvbox-dark.css';       /* Default dark theme */
+   @import './themes/gruvbox-light.css';      /* Light theme */
+   @import './themes/cyberpunk.css';          /* Neon cyberpunk */
+   @import './themes/terminal-green.css';     /* Classic terminal */
+   @import './themes/dracula.css';            /* Popular dark theme */
+   @import './themes/catppuccin-latte.css';   /* Light pastels */
+   @import './themes/catppuccin-frappe.css';  /* Dark pastels */
+   @import './themes/catppuccin-macchiato.css'; /* Medium dark pastels */
+   @import './themes/catppuccin-mocha.css';   /* Darkest pastels */
    ```
 4. **Save** and refresh your browser
 
@@ -32,6 +36,10 @@ The color variables have been extracted from `src/styles/global.css` into separa
 | **cyberpunk.css** | Neon colors on pure black background |
 | **terminal-green.css** | Classic green-on-black terminal |
 | **dracula.css** | Popular dark theme with purple accents |
+| **catppuccin-latte.css** | Light pastel theme with soft, warm colors |
+| **catppuccin-frappe.css** | Dark pastel theme with gentle contrast |
+| **catppuccin-macchiato.css** | Medium dark with balanced pastel tones |
+| **catppuccin-mocha.css** | Darkest variant with rich, cozy pastels |
 
 ## ✨ Creating Custom Themes
 

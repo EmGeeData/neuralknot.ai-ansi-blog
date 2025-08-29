@@ -13,6 +13,10 @@ This directory contains color themes for your BBS terminal blog. Each theme defi
 | **Cyberpunk** | `cyberpunk.css` | Neon colors for a cyberpunk aesthetic |
 | **Terminal Green** | `terminal-green.css` | Classic green terminal on black |
 | **Dracula** | `dracula.css` | Popular dark theme with purple accents |
+| **Catppuccin Latte** | `catppuccin-latte.css` | Light pastel theme with warm tones |
+| **Catppuccin Frappé** | `catppuccin-frappe.css` | Dark pastel theme with soft contrast |
+| **Catppuccin Macchiato** | `catppuccin-macchiato.css` | Medium dark with balanced pastels |
+| **Catppuccin Mocha** | `catppuccin-mocha.css` | Darkest pastel theme with rich colors |
 
 ## 🔄 Switching Themes
 
@@ -125,6 +129,26 @@ To create your own theme:
 - **Vibe**: Dark, elegant, developer-friendly  
 - **Background**: Dark purple-gray
 - **Accents**: Bright pastel colors
+
+### Catppuccin Latte
+- **Vibe**: Light, soft, pastel elegance
+- **Background**: Warm cream and light gray
+- **Accents**: Muted pastel colors
+
+### Catppuccin Frappé  
+- **Vibe**: Dark pastels with gentle contrast
+- **Background**: Medium dark blue-gray
+- **Accents**: Soft pastel colors
+
+### Catppuccin Macchiato
+- **Vibe**: Balanced dark theme with warmth
+- **Background**: Dark but not harsh
+- **Accents**: Rich pastel tones
+
+### Catppuccin Mocha
+- **Vibe**: Deep, rich, cozy darkness
+- **Background**: Very dark with subtle tints
+- **Accents**: Vibrant but smooth pastels
 
 ## 🔧 Advanced Theme Features
 

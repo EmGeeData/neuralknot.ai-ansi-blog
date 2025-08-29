@@ -1,0 +1,34 @@
+/* Catppuccin Mocha Theme (Darkest) */
+:root {
+    /* Base colors (dark theme - darkest to lightest) */
+    --bg0: #11111b;  /* Crust */
+    --bg1: #181825;  /* Mantle */
+    --bg2: #1e1e2e;  /* Base */
+    --bg3: #313244;  /* Surface 0 */
+    --bg4: #45475a;  /* Surface 1 */
+    
+    /* Text colors (light on dark) */
+    --fg0: #cdd6f4;  /* Text */
+    --fg1: #cdd6f4;  /* Text */
+    --fg2: #bac2de;  /* Subtext 1 */
+    --fg3: #a6adc8;  /* Subtext 0 */
+    --fg4: #9399b2;  /* Overlay 2 */
+    
+    /* Accent colors */
+    --red: #f38ba8;      /* Red */
+    --green: #a6e3a1;    /* Green */
+    --yellow: #f9e2af;   /* Yellow */
+    --blue: #89b4fa;     /* Blue */
+    --purple: #cba6f7;   /* Mauve */
+    --aqua: #94e2d5;     /* Teal */
+    --orange: #fab387;   /* Peach */
+    
+    /* Dimmed accent colors */
+    --red-dim: #eba0ac;    /* Maroon */
+    --green-dim: #94e2d5;  /* Teal (as muted green) */
+    --yellow-dim: #f5e0dc; /* Rosewater */
+    --blue-dim: #74c7ec;   /* Sapphire */
+    --purple-dim: #f5c2e7; /* Pink */
+    --aqua-dim: #89dceb;   /* Sky */
+    --orange-dim: #f2cdcd; /* Flamingo */
+}
