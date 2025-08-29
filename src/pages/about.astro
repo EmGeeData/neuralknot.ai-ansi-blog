@@ -1,63 +1,163 @@
 ---
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from '../components/BaseHead.astro';
+import { FOOTER_CONFIG } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead 
+			title="About NeuralKnot.ai BBS" 
+			description="Learn about the NeuralKnot.ai BBS - a tech terminal exploring software development, hacking culture, AI, and cybersecurity through retro computing aesthetics."
+			type="website"
+		/>
+		<script src="/terminal.js" is:inline></script>
+		<script src="/theme-switcher.js" is:inline></script>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', function() {
+				const placeholder = document.getElementById('theme-selector-placeholder');
+				if (placeholder && window.ThemeSwitcher) {
+					const selector = window.ThemeSwitcher.createThemeSelector();
+					placeholder.appendChild(selector);
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="logo">NEURALKNOT.AI</div>
+				<div class="tagline">── TECH TERMINAL ──</div>
+				<div class="tagline">Node 1 of 3 • Connected at 56k</div>
+				<div class="theme-selector-container">
+					<span class="theme-selector-label">THEME:</span>
+					<div id="theme-selector-placeholder"></div>
+				</div>
+			</div>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+			<div class="ascii-art" id="ascii-art">
+			</div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+			<div class="menu">
+				<div class="menu-title">═══ MAIN MENU ═══</div>
+				<a href="/" class="menu-item">► [H] Home Terminal</a>
+				<a href="/blog" class="menu-item">► [B] Blog Archives</a>
+				<a href="/about" class="menu-item">► [A] About System</a>
+			</div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+			<!-- Main Content -->
+			<div class="articles">
+				<div class="articles-title">═══ ABOUT SYSTEM ═══</div>
+				<div class="article-item">
+					<div class="article-desc">
+						<strong>Welcome to NeuralKnot.ai BBS - Node 1 of 3</strong><br>
+						<em>Connection established. Terminal access granted.</em>
+					</div>
+					<div class="article-desc">
+						This bulletin board system serves as a digital nexus for exploring the intersection of classical computing and modern technology. Built with authentic 1980s-90s terminal aesthetics, we maintain the spirit of the original BBS culture while discussing contemporary developments in software engineering, artificial intelligence, and cybersecurity.
+					</div>
+				</div>
+			</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+			<div class="articles">
+				<div class="articles-title">═══ MISSION STATEMENT ═══</div>
+				<div class="article-item">
+					<div class="article-desc">The NeuralKnot.ai BBS exists to:</div>
+					<div class="article-desc">
+						• <strong>Preserve hacker culture</strong> - Maintaining the ethos of curiosity, technical excellence, and knowledge sharing that defined early computing communities<br><br>
+						• <strong>Bridge past and future</strong> - Connecting retro computing wisdom with cutting-edge AI and development practices<br><br>
+						• <strong>Foster deep technical discussion</strong> - Providing a space for substantive analysis of code, systems, and emerging technologies<br><br>
+						• <strong>Document the evolution</strong> - Tracking how AI is reshaping software development, security, and the broader tech landscape
+					</div>
+				</div>
+			</div>
+
+			<div class="stats">
+				<div class="stat-box">
+					<div class="stat-title">SYSTEM ARCHITECTURE</div>
+					<div class="stat-value">Perfect DOS VGA Typography</div>
+					<div class="stat-value">15 Terminal Color Themes</div>
+					<div class="stat-value">Static Site Generation</div>
+					<div class="stat-value">Modern Web Standards</div>
+				</div>
+				<div class="stat-box">
+					<div class="stat-title">NODE CONFIGURATION</div>
+					<div class="stat-value">SysOp: TechHacker</div>
+					<div class="stat-value">Co-SysOp: CodeWeaver</div>
+					<div class="stat-value">System: GruvNet v2.0</div>
+					<div class="stat-value">Network: FidoNet 2:404/1337</div>
+				</div>
+			</div>
+
+			<div class="articles">
+				<div class="articles-title">═══ CONTENT FOCUS ═══</div>
+				<div class="article-item">
+					<div class="article-title">Software Development</div>
+					<div class="article-desc">Programming tutorials and deep-dives • Framework analysis • Performance optimization • Code review and best practices</div>
+				</div>
+				<div class="article-item">
+					<div class="article-title">Cybersecurity</div>
+					<div class="article-desc">Vulnerability research and analysis • Defensive programming • Security tool reviews • Threat landscape analysis</div>
+				</div>
+				<div class="article-item">
+					<div class="article-title">Artificial Intelligence</div>
+					<div class="article-desc">AI/ML implementation guides • Research paper breakdowns • Practical applications • Ethics and implications</div>
+				</div>
+				<div class="article-item">
+					<div class="article-title">Hacking Culture</div>
+					<div class="article-desc">History and philosophy • Technical curiosity • Community building • Digital archaeology and retro computing</div>
+				</div>
+			</div>
+
+			<div class="news">
+				<div class="news-title">═══ USER GUIDELINES ═══</div>
+				<div class="news-item">• <strong>Access to computers should be unlimited and total</strong></div>
+				<div class="news-item">• <strong>All information wants to be free</strong></div>
+				<div class="news-item">• <strong>Mistrust authority - promote decentralization</strong></div>
+				<div class="news-item">• <strong>Judge hackers by their hacking, not credentials</strong></div>
+				<div class="news-item">• <strong>Create beauty and utility with computers</strong></div>
+				<div class="news-item">• <strong>Computers can change your life for the better</strong></div>
+			</div>
+
+			<div class="articles">
+				<div class="articles-title">═══ FUTURE DEVELOPMENT ═══</div>
+				<div class="article-item">
+					<div class="article-desc">
+						• <strong>Interactive Code Execution</strong> - Live programming environments for tutorials<br><br>
+						• <strong>Multi-User Chat System</strong> - Real-time discussion channels for different topics<br><br>
+						• <strong>File Exchange Area</strong> - Curated collection of tools, scripts, and documentation<br><br>
+						• <strong>AI-Assisted Research</strong> - Integration of AI tools for enhanced content discovery<br><br>
+						• <strong>Extended Network</strong> - Federation with other technical BBS systems
+					</div>
+				</div>
+			</div>
+
+			<div class="articles">
+				<div class="articles-title">═══ ACKNOWLEDGMENTS ═══</div>
+				<div class="article-item">
+					<div class="article-desc">
+						This system pays homage to the original BBS operators and early internet pioneers who built the foundation of digital communication. Special recognition to the communities that preserved and shared the knowledge that makes modern development possible.
+					</div>
+					<div class="article-desc">
+						The terminal aesthetic honors the era when computing required deeper understanding and when every byte mattered. We carry forward that spirit of technical excellence and curiosity into the age of AI and quantum computing.
+					</div>
+					<div class="article-desc">
+						<strong>System Status: ONLINE</strong><br>
+						<strong>Last Updated: August 29, 2024</strong><br>
+						<strong>Connection Time: ∞</strong><br><br>
+						<em>"The best way to predict the future is to invent it." - Alan Kay</em>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer">
+				<div>{FOOTER_CONFIG.about.statusLine}</div>
+				<div class="blink">{FOOTER_CONFIG.about.promptText}<span class="cursor"></span></div>
+				<div style="margin-top: 1em; font-size: 0.8em;">
+					{FOOTER_CONFIG.common.copyright} • SysOp: {FOOTER_CONFIG.common.sysop} • Co-SysOp: {FOOTER_CONFIG.common.cosysop}<br>
+					Powered by {FOOTER_CONFIG.common.systemName} • {FOOTER_CONFIG.common.fidonet}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
