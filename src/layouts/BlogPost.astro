@@ -1,0 +1,187 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+		<script src="/terminal.js" is:inline></script>
+		<style>
+			/* Terminal-specific blog post styles */
+			.blog-container {
+				max-width: 80ch;
+				margin: 0 auto;
+				padding: 2em;
+				position: relative;
+			}
+
+			.blog-header {
+				border: double 3px var(--orange);
+				padding: 1em;
+				margin-bottom: 2em;
+				background: linear-gradient(45deg, var(--bg1), var(--bg2));
+				text-align: center;
+			}
+
+			.blog-title {
+				color: var(--yellow);
+				font-size: 1.8em;
+				margin-bottom: 0.5em;
+				text-shadow: 1px 1px 0 var(--red);
+			}
+
+			.blog-meta {
+				color: var(--aqua);
+				font-size: 0.9em;
+				margin-bottom: 0.5em;
+			}
+
+			.blog-nav {
+				border: solid 2px var(--yellow);
+				padding: 1em;
+				margin-bottom: 2em;
+				background: var(--blue-dim);
+				text-align: center;
+			}
+
+			.blog-nav a {
+				color: var(--aqua);
+				text-decoration: none;
+				margin: 0 1em;
+				padding: 0.2em 0.5em;
+				transition: all 0.1s;
+			}
+
+			.blog-nav a:hover {
+				background: var(--yellow);
+				color: var(--bg0);
+			}
+
+			.blog-content {
+				border: solid 2px var(--green);
+				padding: 2em;
+				margin: 2em 0;
+				background: var(--bg1);
+				color: var(--fg1);
+				line-height: 1.6;
+			}
+
+			.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
+				color: var(--yellow);
+				margin: 1.5em 0 0.5em 0;
+				text-shadow: 1px 1px 0 var(--bg0);
+			}
+
+			.blog-content h1 { font-size: 1.8em; }
+			.blog-content h2 { font-size: 1.5em; }
+			.blog-content h3 { font-size: 1.3em; }
+
+			.blog-content p {
+				margin-bottom: 1em;
+				color: var(--fg1);
+			}
+
+			.blog-content a {
+				color: var(--aqua);
+				text-decoration: underline;
+			}
+
+			.blog-content a:hover {
+				color: var(--yellow);
+			}
+
+			.blog-content code {
+				background: var(--bg0);
+				color: var(--orange);
+				padding: 0.2em 0.4em;
+				border: 1px solid var(--bg3);
+				font-family: 'Perfect DOS VGA', 'Courier New', monospace;
+			}
+
+			.blog-content pre {
+				background: var(--bg0);
+				color: var(--fg1);
+				padding: 1em;
+				border: 2px solid var(--bg3);
+				overflow-x: auto;
+				margin: 1em 0;
+			}
+
+			.blog-content pre code {
+				background: none;
+				border: none;
+				padding: 0;
+				color: var(--fg1);
+			}
+
+			.blog-content blockquote {
+				border-left: 4px solid var(--purple);
+				padding-left: 1em;
+				margin: 1em 0;
+				color: var(--fg2);
+				font-style: italic;
+			}
+
+			.blog-content ul, .blog-content ol {
+				margin: 1em 0;
+				padding-left: 2em;
+			}
+
+			.blog-content li {
+				margin-bottom: 0.5em;
+				color: var(--fg1);
+			}
+
+			.blog-content hr {
+				border: none;
+				border-top: 2px solid var(--bg3);
+				margin: 2em 0;
+			}
+
+			.blog-footer {
+				text-align: center;
+				margin-top: 3em;
+				padding: 1em;
+				border-top: double 3px var(--fg1);
+				color: var(--fg3);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="blog-container">
+			<div class="blog-header">
+				<div class="blog-title">{title}</div>
+				<div class="blog-meta">
+					Published: {pubDate.toLocaleDateString()} 
+					{updatedDate && ` • Updated: ${updatedDate.toLocaleDateString()}`}
+				</div>
+				<div class="blog-meta">Research Paper • NeuralKnot Archive</div>
+			</div>
+
+			<div class="blog-nav">
+				<a href="/">◄ Home Terminal</a>
+				<a href="/blog">◄ Blog Archives</a>
+				<a href="/about">About System</a>
+			</div>
+
+			<article class="blog-content">
+				<slot />
+			</article>
+
+			<div class="blog-footer">
+				<div>Paper Access Complete • Session Active</div>
+				<div class="blink">Ready for next command<span class="cursor"></span></div>
+				<div style="margin-top: 1em; font-size: 0.8em;">
+					NeuralKnot.ai Research Archive © 2024<br>
+					Paper: "{title}" • FidoNet 2:404/1337
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

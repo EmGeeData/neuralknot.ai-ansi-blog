@@ -1,0 +1,84 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<script src="/terminal.js" is:inline></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="logo">NEURALKNOT.AI</div>
+				<div class="tagline">── AI RESEARCH TERMINAL ──</div>
+				<div class="tagline">Node 1 of 3 • Connected at 56k</div>
+			</div>
+
+			<div class="ascii-art" id="ascii-art">
+			</div>
+
+			<div class="menu">
+				<div class="menu-title">═══ MAIN MENU ═══</div>
+				<a href="/" class="menu-item">[H] Home Terminal</a>
+				<a href="/blog" class="menu-item">[B] Blog Archives</a>
+				<a href="/about" class="menu-item">[A] About System</a>
+			</div>
+
+			<div class="articles">
+				<div class="articles-title">═══ LATEST RESEARCH ═══</div>
+				{posts.slice(0, 3).map((post) => (
+					<div class="article-item">
+						<div class="article-title">
+							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
+						</div>
+						<div class="article-meta">
+							Posted: {post.data.pubDate.toLocaleDateString()} | Category: AI Research | Author: NeuralHacker
+						</div>
+						<div class="article-desc">{post.data.description}</div>
+					</div>
+				))}
+			</div>
+
+			<div class="stats">
+				<div class="stat-box">
+					<div class="stat-title">TERMINAL STATUS</div>
+					<div class="stat-value">3 Nodes Active</div>
+					<div class="stat-value">7 Researchers Online</div>
+					<div class="stat-value">2,048 Total Users</div>
+				</div>
+				<div class="stat-box">
+					<div class="stat-title">KNOWLEDGE BASE</div>
+					<div class="stat-value">1,337 Papers</div>
+					<div class="stat-value">420 Tutorials</div>
+					<div class="stat-value">69 Code Repos</div>
+				</div>
+			</div>
+
+			<div class="news">
+				<div class="news-title">═══ RECENT UPDATES ═══</div>
+				<div class="news-item">• New transformer tutorial series uploaded to the archive</div>
+				<div class="news-item">• AI Ethics discussion board now available</div>
+				<div class="news-item">• PyTorch implementation examples added to code section</div>
+				<div class="news-item">• Weekly AI research paper review starting this Sunday</div>
+				<div class="news-item">• Neural network visualization tools now online</div>
+			</div>
+
+			<div class="footer">
+				<div>Connected at 56k baud • Session Time: 00:12:45 • Credits: 2,048</div>
+				<div class="blink">Press any key to continue<span class="cursor"></span></div>
+				<div style="margin-top: 1em; font-size: 0.8em;">
+					NeuralKnot.ai BBS © 2024 • SysOp: AIResearcher • Co-SysOp: DeepMind<br>
+					Powered by GruvNet v2.0 • FidoNet 2:404/1337
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

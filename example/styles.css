@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Perfect+DOS+VGA:wght@400&display=swap');
+
+:root {
+    /* Gruvbox Dark Color Palette */
+    --bg0: #282828;
+    --bg1: #3c3836;
+    --bg2: #504945;
+    --bg3: #665c54;
+    --bg4: #7c6f64;
+    
+    --fg0: #fbf1c7;
+    --fg1: #ebdbb2;
+    --fg2: #d5c4a1;
+    --fg3: #bdae93;
+    --fg4: #a89984;
+    
+    --red: #fb4934;
+    --green: #b8bb26;
+    --yellow: #fabd2f;
+    --blue: #83a598;
+    --purple: #d3869b;
+    --aqua: #8ec07c;
+    --orange: #fe8019;
+    
+    --red-dim: #cc241d;
+    --green-dim: #98971a;
+    --yellow-dim: #d79921;
+    --blue-dim: #458588;
+    --purple-dim: #b16286;
+    --aqua-dim: #689d6a;
+    --orange-dim: #d65d0e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg0);
+    color: var(--fg1);
+    font-family: 'Perfect DOS VGA', 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1;
+    overflow-x: hidden;
+    animation: scanlines 0.1s linear infinite;
+}
+
+@keyframes scanlines {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 4px; }
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        transparent 50%,
+        rgba(184, 187, 38, 0.03) 51%
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 80ch;
+    margin: 0 auto;
+    padding: 2em;
+    position: relative;
+}
+
+.header {
+    border: double 3px var(--orange);
+    padding: 1em;
+    margin-bottom: 2em;
+    background: linear-gradient(45deg, var(--bg1), var(--bg2));
+    text-align: center;
+}
+
+.logo {
+    color: var(--yellow);
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 0 var(--red), 4px 4px 0 var(--blue);
+}
+
+.tagline {
+    color: var(--aqua);
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    color: var(--green);
+    text-align: center;
+    margin: 2em 0;
+    font-size: 0.7em;
+}
+
+.menu {
+    border: solid 2px var(--yellow);
+    padding: 1.5em;
+    margin: 2em 0;
+    background: var(--blue-dim);
+}
+
+.menu-title {
+    color: var(--yellow);
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.menu-item {
+    display: block;
+    color: var(--aqua);
+    margin: 0.5em 0;
+    text-decoration: none;
+    padding: 0.2em;
+    transition: all 0.1s;
+}
+
+.menu-item:hover {
+    background: var(--yellow);
+    color: var(--bg0);
+}
+
+.menu-item::before {
+    content: "► ";
+    color: var(--purple);
+}
+
+.articles {
+    border: solid 2px var(--green);
+    padding: 1.5em;
+    margin: 2em 0;
+    background: var(--green-dim);
+    color: var(--bg0);
+}
+
+.articles-title {
+    color: var(--fg0);
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+
+.article-item {
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid var(--bg2);
+}
+
+.article-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.article-title {
+    color: var(--fg0);
+    margin-bottom: 0.3em;
+}
+
+.article-meta {
+    color: var(--fg3);
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+.article-desc {
+    color: var(--fg2);
+    font-size: 0.9em;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.stat-box {
+    border: solid 1px var(--purple);
+    padding: 1em;
+    background: var(--purple-dim);
+}
+
+.stat-title {
+    color: var(--fg0);
+    margin-bottom: 0.5em;
+}
+
+.stat-value {
+    color: var(--yellow);
+    font-size: 1.5em;
+}
+
+.news {
+    border: solid 2px var(--red);
+    padding: 1em;
+    margin: 2em 0;
+    background: var(--red-dim);
+}
+
+.news-title {
+    color: var(--fg0);
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.news-item {
+    color: var(--fg1);
+    margin-bottom: 0.5em;
+    border-left: 3px solid var(--orange);
+    padding-left: 0.5em;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 3em;
+    padding: 1em;
+    border-top: double 3px var(--fg1);
+    color: var(--fg3);
+}
+
+.blink {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.cursor::after {
+    content: "█";
+    animation: blink 1s infinite;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1em;
+    }
+    
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .ascii-art {
+        font-size: 0.5em;
+    }
+}
