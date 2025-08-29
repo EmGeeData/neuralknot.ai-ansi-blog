@@ -6,8 +6,15 @@ The color variables have been extracted from `src/styles/global.css` into separa
 
 ## 🔄 How to Switch Themes
 
-**To change your site's color theme:**
+**The site now features dynamic theme switching! Choose from two methods:**
 
+### Method 1: Dynamic Theme Dropdown (Recommended)
+1. **Visit any page** on the site
+2. **Look for the theme dropdown** in the header (labeled "THEME:")
+3. **Select any theme** from the dropdown for instant preview
+4. **Your choice is automatically saved** to localStorage and persists across visits
+
+### Method 2: Manual CSS Import (Advanced)
 1. **Open** `src/styles/global.css`
 2. **Find this line** (around line 4):
 
@@ -18,10 +25,14 @@ The color variables have been extracted from `src/styles/global.css` into separa
 3. **Replace** with any of these themes:
 
    ```css
-   @import "./themes/gruvbox-dark.css"; /* Default dark theme */
-   @import "./themes/gruvbox-light.css"; /* Light theme */
+   @import "./themes/gruvbox-dark.css"; /* Warm retro dark theme */
+   @import "./themes/gruvbox-light.css"; /* Light cream theme */
+   @import "./themes/gruvbox-material-dark.css"; /* Softer contrast */
+   @import "./themes/gruvbox-material-hard.css"; /* Higher contrast */
    @import "./themes/cyberpunk.css"; /* Neon cyberpunk */
    @import "./themes/terminal-green.css"; /* Classic terminal */
+   @import "./themes/classic-terminal-green.css"; /* Authentic monochrome green */
+   @import "./themes/classic-terminal-amber.css"; /* Authentic monochrome amber */
    @import "./themes/dracula.css"; /* Popular dark theme */
    @import "./themes/catppuccin-latte.css"; /* Light pastels */
    @import "./themes/catppuccin-frappe.css"; /* Dark pastels */

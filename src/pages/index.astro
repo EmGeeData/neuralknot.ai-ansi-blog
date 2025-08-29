@@ -11,7 +11,12 @@ const posts = (await getCollection('blog')).sort(
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead 
+			title={SITE_TITLE} 
+			description={SITE_DESCRIPTION}
+			type="website"
+			keywords={["tech blog", "software development", "hacking culture", "AI", "cybersecurity", "BBS"]}
+		/>
 		<script src="/terminal.js" is:inline></script>
 		<script src="/theme-switcher.js" is:inline></script>
 		<script is:inline>

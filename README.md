@@ -6,12 +6,13 @@ A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, cover
 
 - **BBS Terminal Aesthetic**: Authentic 1980s-90s terminal styling with CP437 encoding
 - **ANSI Art Integration**: ASCII art headers and visual elements
-- **13 Color Themes**: Including Gruvbox, Catppuccin, Tokyo Night, and more
+- **15 Color Themes**: Including Gruvbox, Catppuccin, Tokyo Night, classic terminal themes, and more
 - **Perfect DOS VGA Font**: Authentic retro typography
+- **Enhanced SEO**: Comprehensive metadata, structured data, social media optimization
 - **Responsive Images**: Optimized image handling for all screen sizes
 - **MDX Support**: Interactive content with Markdown + JSX
 - **Fast Performance**: Built on Astro for optimal loading speeds
-- **SEO Optimized**: Canonical URLs, OpenGraph, and sitemap support
+- **Clean Architecture**: Organized CSS, centralized configuration, modular design
 
 ## 🎨 Available Themes
 
@@ -22,7 +23,7 @@ Switch between 15 carefully crafted color themes:
 | **Gruvbox** | Dark, Light, Material Dark, Material Hard | Warm retro colors with excellent readability |
 | **Catppuccin** | Latte, Frappé, Macchiato, Mocha | Soothing pastel themes from light to dark |
 | **Tokyo Night** | Original, Storm | Urban neon-inspired dark themes |
-| **Classic Terminal** | Green, Amber | Authentic monochrome terminal themes |
+| **Classic Terminal** | Green, Amber | Authentic monochrome terminal experience |
 | **Modern** | Cyberpunk, Terminal Green, Dracula | Contemporary terminal and developer themes |
 
 See [docs/THEME_SWITCHER.md](docs/THEME_SWITCHER.md) for switching instructions.
@@ -48,17 +49,24 @@ pnpm preview
 ```text
 ├── public/
 │   ├── fonts/               # Perfect DOS VGA font files
+│   ├── terminal.js         # ASCII art and terminal effects  
+│   ├── theme-switcher.js   # Dynamic theme switching
 │   └── favicon.ico
 ├── src/
 │   ├── components/          # Reusable UI components
+│   │   └── BaseHead.astro  # Enhanced SEO metadata component
+│   ├── config/             # Configuration files
+│   │   └── seo.ts          # Central SEO configuration
 │   ├── content/
-│   │   └── blog/           # Blog posts (Markdown/MDX)
+│   │   ├── blog/           # Blog posts (Markdown/MDX)
+│   │   └── config.ts       # Content schema with SEO fields
 │   ├── layouts/
 │   │   ├── BaseLayout.astro # Main site layout
 │   │   └── BlogPost.astro  # Blog post layout
 │   ├── pages/              # Site pages and routing
 │   └── styles/
-│       ├── themes/         # 13 color theme files
+│       ├── themes/         # 15 color theme files
+│       ├── blog-post.css   # Dedicated blog post styles
 │       └── global.css      # Main stylesheet
 ├── docs/                   # 📚 Complete documentation
 │   ├── README.md          # Documentation index
@@ -124,6 +132,33 @@ See [docs/MDX_GUIDE.md](docs/MDX_GUIDE.md) for MDX-specific guidance.
    ```
 2. Modify the CSS variables in your new file
 3. Import your theme in `global.css`
+
+## 🔍 SEO & Social Media
+
+The blog includes a comprehensive SEO system:
+
+### Central SEO Configuration (`src/config/seo.ts`)
+- **Site-wide defaults** with tech/BBS themed keywords
+- **Metadata generation** utilities for consistent SEO
+- **Structured data** for articles and website schema
+- **Social media optimization** (Open Graph, Twitter Cards)
+
+### Enhanced Content Schema
+- **Optional SEO overrides** per blog post
+- **Custom meta titles, descriptions, and keywords**
+- **Article categorization** and tagging system
+- **Social media image customization**
+
+### Usage Example
+```typescript
+// In blog post frontmatter
+seo: {
+  metaTitle: "Custom SEO Title",
+  metaDescription: "Custom description under 160 chars",
+  keywords: ["custom", "keywords"],
+  ogImage: "/custom-og-image.jpg"
+}
+```
 
 ## ⚙️ Site Configuration
 

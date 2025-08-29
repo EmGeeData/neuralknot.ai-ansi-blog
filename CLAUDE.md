@@ -18,27 +18,31 @@ All commands use `pnpm` and are run from the project root:
 ## Design Philosophy
 
 ### BBS Terminal Aesthetic
-- **13 Dynamic Color Themes** including Gruvbox, Catppuccin, Tokyo Night, and classic terminal themes
+- **15 Dynamic Color Themes** including Gruvbox variants, Catppuccin collection, Tokyo Night, classic terminal themes (green/amber), and modern themes
 - **Perfect DOS VGA font** for authentic retro terminal feel
 - **ANSI/ASCII art** prominently featured throughout
 - **Terminal-style borders** using Unicode box-drawing characters (═, ║, ╔, ╗, etc.)
 - **Scanline effects** and CRT monitor simulation
 - **Blinking cursor** and retro animations
 - **Dynamic Theme Switching** with dropdown selector and localStorage persistence
+- **Enhanced SEO** with structured data and social media optimization
 
 ### Theme Elements
 - Site name: **"NEURALKNOT.AI"** 
-- Tagline: **"AI RESEARCH TERMINAL"**
-- BBS-style navigation with lettered options `[A]`, `[T]`, `[N]`, etc.
-- Terminal status indicators (connection speed, session time, credits)
-- Multi-section layout: main menu, latest research, terminal stats, recent updates
-- References to nodes, baud rates, FidoNet addressing
+- Tagline: **"TECH TERMINAL"** (updated from AI Research Terminal to broader tech focus)
+- BBS-style navigation with lettered options `[H]`, `[B]`, `[A]`, etc.
+- Terminal status indicators (nodes active, hackers online, system stats)
+- Multi-section layout: main menu, latest articles (up to 16), terminal stats, knowledge base, recent updates
+- References to nodes, baud rates, FidoNet addressing (2:404/1337)
+- Content covers: software development, hacking culture, AI developments, cybersecurity
 
 ## Architecture
 
 ### Content Management
 - Blog posts stored in `src/content/blog/` as Markdown/MDX files
-- Content schema defined in `src/content.config.ts`
+- Content schema defined in `src/content/config.ts` with enhanced SEO fields
+- Categories: software-development, cybersecurity, artificial-intelligence, hacking-culture, programming-tutorials, tech-analysis, tools-reviews, industry-news
+- Optional SEO overrides per post (custom meta titles, descriptions, OG images, keywords)
 - Focus on software development, hacking culture, AI developments, cybersecurity, programming tutorials, tech industry analysis, and the intersection of AI with traditional computing
 
 ### Key Design Components
@@ -63,41 +67,65 @@ nk-ansi-blog/
 │   └── theme-switcher.js  # Dynamic theme switching system
 ├── src/
 │   ├── components/        # BBS-style UI components
-│   ├── content/blog/      # Tech blog posts covering dev/hacking/AI (Markdown/MDX)
+│   │   └── BaseHead.astro # Enhanced SEO metadata component
+│   ├── config/            # 🆕 Configuration files
+│   │   └── seo.ts         # Central SEO configuration and utilities
+│   ├── content/
+│   │   ├── blog/          # Tech blog posts covering dev/hacking/AI (Markdown/MDX)
+│   │   └── config.ts      # Content schema with SEO fields
 │   ├── layouts/           # Terminal-inspired page layouts
+│   │   └── BlogPost.astro # Uses external CSS file for cleaner organization
 │   ├── pages/             # Home, blog, about pages
 │   ├── styles/
-│   │   ├── themes/        # 13 color theme CSS files
-│   │   │   └── README.md  # Technical theme documentation
+│   │   ├── themes/        # 15 color theme CSS files
+│   │   │   ├── README.md  # Technical theme documentation
+│   │   │   ├── classic-terminal-green.css  # 🆕 Monochrome green
+│   │   │   └── classic-terminal-amber.css  # 🆕 Monochrome amber
+│   │   ├── blog-post.css  # 🆕 Dedicated blog post styles
 │   │   └── global.css     # Main stylesheet
-│   └── consts.ts          # Site configuration & footer content
+│   └── consts.ts          # Site configuration & externalized content
 └── CLAUDE.md              # This file - development guidance
 ```
 
 ### Configuration
 - **Site constants** in `src/consts.ts` including:
-  - Site title and description
+  - Site title and description (updated to broader tech focus)
   - Footer configuration for all page types (home, blog, about, posts)
-  - Recent updates array for easy news section management
+  - Recent updates, terminal status, and knowledge base (externalized for easy management)
   - Shared content like copyright, sysop names, system details
-- **Theme system** with 13 themes in `src/styles/themes/` and dynamic switching via `public/theme-switcher.js`
-- **Content management** via Astro's content collections in `src/content/blog/`
+- **SEO configuration** in `src/config/seo.ts` including:
+  - Site-wide SEO defaults with BBS/terminal themed keywords
+  - Metadata generation utilities and structured data
+  - Social media configurations (Twitter Cards, Open Graph)
+  - Article and website structured data for better search visibility
+- **Theme system** with 15 themes in `src/styles/themes/` and dynamic switching via `public/theme-switcher.js`
+- **Content management** via Astro's content collections with enhanced SEO schema
+- **CSS organization** with dedicated files for blog posts and cleaner component separation
 - **Perfect DOS VGA font** loaded from Google Fonts for authentic terminal typography
-- **Responsive images** with JavaScript-based solutions for blog posts
 
 ## Key Features
 
 ### Dynamic Theme System
-- **13 Built-in Themes**: Gruvbox variants, Catppuccin collection, Tokyo Night, classic terminal themes
+- **15 Built-in Themes**: Gruvbox variants, Catppuccin collection, Tokyo Night, classic terminal themes (green/amber), modern themes
 - **Live Theme Switching**: Dropdown selector in page headers with instant preview
 - **Persistent Preferences**: Themes saved to localStorage and restored on page load
 - **Modular Architecture**: Each theme is a separate CSS file with consistent variable naming
+- **Authentic Terminal Themes**: Classic Terminal Green and Amber for authentic monochrome experience
 
 ### Content Creation
 - **Markdown Support**: Standard blog posts with frontmatter
 - **MDX Integration**: Interactive content with JSX components
 - **Image Optimization**: Responsive images with proper scaling and containers
 - **BBS Styling**: All content styled with terminal aesthetics
+
+### SEO & Social Media Optimization
+- **Comprehensive Meta Tags**: Open Graph, Twitter Cards, structured data
+- **Article-Specific SEO**: Publish dates, author info, article sections, tags
+- **BBS-Themed Keywords**: Terminal computing, hacking culture, tech development
+- **Social Media Ready**: Proper OG images, descriptions, and card types
+- **Structured Data**: Article and website schemas for better search visibility
+- **Per-Post SEO Overrides**: Optional custom meta titles, descriptions, keywords
+- **Search Engine Optimization**: Canonical URLs, robots directives, sitemaps
 
 ### BBS Terminal Experience
 - **ASCII Art Headers**: Generated terminal-style branding
@@ -122,9 +150,22 @@ nk-ansi-blog/
 
 ### Code Standards
 - **CSS**: Use CSS custom properties for theming, avoid hardcoded colors
+  - Organize styles in dedicated files (e.g., `blog-post.css`) for better maintainability
+  - Use global styles for markdown content that needs to override browser defaults
 - **JavaScript**: Minimal JS for theme switching and terminal effects
+- **SEO**: Use the central SEO configuration for consistent metadata
+  - Leverage structured data for better search visibility
+  - Override SEO fields per-post only when necessary
 - **Images**: Ensure responsive behavior and proper containment
 - **Accessibility**: Test all themes for contrast compliance
+
+### Recent Improvements
+- **Enhanced SEO System**: Comprehensive metadata, structured data, social media optimization
+- **CSS Organization**: Separated blog post styles into dedicated file for cleaner architecture
+- **Theme Expansion**: Added Classic Terminal Green and Amber themes for authentic monochrome experience
+- **Content Externalization**: Moved dynamic content sections to consts.ts for easier management
+- **Homepage Enhancement**: Expanded latest articles section to show up to 16 posts
+- **Link Styling Consistency**: Fixed markdown content links to use theme colors across all pages
 
 ## Documentation
 - **Complete documentation** available in `docs/` folder

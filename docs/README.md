@@ -63,6 +63,16 @@ The blog uses several configuration files for easy customization:
 | `public/theme-switcher.js` | Dynamic theme switching | [Theme Switcher Guide](THEME_SWITCHER.md) |
 | `src/content/blog/` | Blog post content | [Content Guide](CONTENT_GUIDE.md) |
 
+## 🔍 SEO & Performance
+
+The blog includes a comprehensive SEO system designed for optimal search visibility:
+
+- **Central SEO Configuration** (`src/config/seo.ts`) - Site-wide defaults and utilities
+- **Enhanced Content Schema** - Optional SEO overrides per blog post
+- **Structured Data** - Article and website schemas for rich snippets
+- **Social Media Optimization** - Open Graph and Twitter Card support
+- **BBS-Themed Keywords** - Terminal computing and hacking culture SEO
+
 ## 🎨 Available Themes
 
 The blog includes 15 pre-built color themes:

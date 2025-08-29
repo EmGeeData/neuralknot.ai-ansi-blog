@@ -4,17 +4,77 @@
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
 import FallbackImage from '../assets/blog-placeholder-1.jpg';
-import { SITE_TITLE } from '../consts';
+import { 
+  SEO_DEFAULTS, 
+  generateMetaTags, 
+  generateWebsiteStructuredData,
+  generateArticleStructuredData,
+  type SEOMetadata 
+} from '../config/seo';
 
 interface Props {
-	title: string;
-	description: string;
-	image?: ImageMetadata;
+	title?: string;
+	description?: string;
+	image?: ImageMetadata | string;
+	type?: 'website' | 'article';
+	publishDate?: Date;
+	modifiedDate?: Date;
+	author?: string;
+	keywords?: string[];
+	noindex?: boolean;
+	nofollow?: boolean;
+	canonical?: string;
+	articleSection?: string;
+	articleTags?: string[];
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const {
+	title,
+	description,
+	image,
+	type = 'website',
+	publishDate,
+	modifiedDate,
+	author,
+	keywords = [],
+	noindex = false,
+	nofollow = false,
+	canonical,
+	articleSection,
+	articleTags = []
+} = Astro.props;
 
-const { title, description, image = FallbackImage } = Astro.props;
+// Generate metadata using our SEO config
+const metadata: SEOMetadata = {
+	title,
+	description,
+	image: typeof image === 'string' ? image : image?.src,
+	type,
+	publishDate,
+	modifiedDate,
+	author,
+	keywords,
+	noindex,
+	nofollow,
+	canonical,
+	articleSection,
+	articleTags
+};
+
+const meta = generateMetaTags(metadata, Astro.url.pathname);
+const structuredData = type === 'article' 
+	? generateArticleStructuredData(metadata, Astro.url.pathname)
+	: generateWebsiteStructuredData();
+
+// Handle image URL generation
+let imageUrl: string;
+if (typeof image === 'string') {
+	imageUrl = image.startsWith('http') ? image : new URL(image, Astro.url).href;
+} else if (image?.src) {
+	imageUrl = new URL(image.src, Astro.url).href;
+} else {
+	imageUrl = new URL(FallbackImage.src, Astro.url).href;
+}
 ---
 
 <!-- Global Metadata -->
@@ -25,7 +85,7 @@ const { title, description, image = FallbackImage } = Astro.props;
 <link
 	rel="alternate"
 	type="application/rss+xml"
-	title={SITE_TITLE}
+	title={SEO_DEFAULTS.siteName}
 	href={new URL('rss.xml', Astro.site)}
 />
 <meta name="generator" content={Astro.generator} />
@@ -34,24 +94,50 @@ const { title, description, image = FallbackImage } = Astro.props;
 <link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
 <link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
 
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<!-- SEO Meta Tags -->
+<title>{meta.title}</title>
+<meta name="description" content={meta.description} />
+<meta name="keywords" content={meta.keywords.join(', ')} />
+<meta name="author" content={meta.author} />
+<link rel="canonical" href={meta.canonical} />
 
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
+<!-- Robots directives -->
+{meta.noindex && <meta name="robots" content="noindex" />}
+{meta.nofollow && <meta name="robots" content="nofollow" />}
+{(meta.noindex || meta.nofollow) && (
+	<meta name="robots" content={`${meta.noindex ? 'noindex' : 'index'}${meta.nofollow ? ',nofollow' : ',follow'}`} />
+)}
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image.src, Astro.url)} />
+<meta property="og:type" content={meta.type} />
+<meta property="og:site_name" content={SEO_DEFAULTS.siteName} />
+<meta property="og:url" content={meta.canonical} />
+<meta property="og:title" content={meta.title} />
+<meta property="og:description" content={meta.description} />
+<meta property="og:image" content={imageUrl} />
+<meta property="og:image:alt" content={meta.imageAlt} />
+<meta property="og:locale" content={SEO_DEFAULTS.locale} />
+
+<!-- Article specific Open Graph -->
+{meta.type === 'article' && (
+	<>
+		{publishDate && <meta property="article:published_time" content={publishDate.toISOString()} />}
+		{modifiedDate && <meta property="article:modified_time" content={modifiedDate.toISOString()} />}
+		{meta.author && <meta property="article:author" content={meta.author} />}
+		{meta.articleSection && <meta property="article:section" content={meta.articleSection} />}
+		{meta.articleTags?.map(tag => <meta property="article:tag" content={tag} />)}
+	</>
+)}
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image.src, Astro.url)} />
+<meta name="twitter:card" content={SEO_DEFAULTS.social.twitter.card} />
+{SEO_DEFAULTS.social.twitter.site && <meta name="twitter:site" content={SEO_DEFAULTS.social.twitter.site} />}
+{SEO_DEFAULTS.social.twitter.creator && <meta name="twitter:creator" content={SEO_DEFAULTS.social.twitter.creator} />}
+<meta name="twitter:url" content={meta.canonical} />
+<meta name="twitter:title" content={meta.title} />
+<meta name="twitter:description" content={meta.description} />
+<meta name="twitter:image" content={imageUrl} />
+<meta name="twitter:image:alt" content={meta.imageAlt} />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(structuredData)} />

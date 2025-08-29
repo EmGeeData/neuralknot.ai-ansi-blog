@@ -158,6 +158,113 @@ The footer and status messages automatically adapt to theme colors through CSS v
 
 This means your custom footer text will automatically work with all 13 available themes.
 
+## 🔍 SEO Configuration
+
+The blog includes a comprehensive SEO system for optimal search visibility and social media sharing.
+
+### Central SEO Configuration (`src/config/seo.ts`)
+
+**Site-wide SEO defaults:**
+```typescript
+export const SEO_CONFIG = {
+  siteName: 'NeuralKnot.ai BBS',
+  siteUrl: 'https://neuralknot.ai',
+  defaultTitle: 'NeuralKnot.ai BBS - Terminal Access',
+  defaultDescription: 'Tech Terminal - Software Development, Hacking Culture, AI & Cybersecurity',
+  defaultKeywords: ['software development', 'hacking culture', 'cybersecurity', 'AI development'],
+  defaultAuthor: 'NeuralKnot.ai',
+  twitterHandle: '@neuralknot',
+  defaultOgImage: '/og-default.jpg',
+  themeColor: '#98971a',
+};
+```
+
+**Customization:**
+- Update URLs to match your domain
+- Modify default descriptions and keywords
+- Set social media handles
+- Configure Open Graph images
+- Adjust theme colors for mobile browsers
+
+### Enhanced Content Schema
+
+**Blog posts support optional SEO overrides:**
+```markdown
+---
+title: 'Your Post Title'
+description: 'Brief description'
+pubDate: 'Aug 29 2024'
+
+# Enhanced SEO (all optional)
+seo:
+  metaTitle: 'Custom SEO Title (60 chars max)'
+  metaDescription: 'Custom meta description (160 chars max)'
+  keywords: ['custom', 'keywords', 'here']
+  ogImage: '/custom-social-image.jpg'
+  ogImageAlt: 'Description of social image'
+  author: 'Custom Author Name'
+  canonical: 'https://yoursite.com/custom-url'
+  noindex: false
+  nofollow: false
+---
+```
+
+**Field Guidelines:**
+- **metaTitle**: Keep under 60 characters for search results
+- **metaDescription**: 150-160 characters optimal for search snippets
+- **keywords**: 3-8 relevant terms, no keyword stuffing
+- **ogImage**: 1200x630px for optimal social media display
+- **canonical**: Use for duplicate content or preferred URLs
+
+### Structured Data
+
+**Automatic generation for:**
+- **Article Schema**: Blog posts get structured data for rich snippets
+- **Website Schema**: Site-wide organization and navigation markup
+- **BreadcrumbList**: Automatic breadcrumb navigation
+- **Person Schema**: Author information and social profiles
+
+**Benefits:**
+- Enhanced search result appearance
+- Better social media link previews
+- Improved search engine understanding
+- Featured snippet eligibility
+
+### Social Media Optimization
+
+**Open Graph Tags:**
+- Dynamic title and description generation
+- Automatic image optimization
+- Site branding consistency
+- Article-specific metadata
+
+**Twitter Cards:**
+- Summary card with large image
+- Author attribution
+- Site handle integration
+- Custom card types per content
+
+### BBS-Themed SEO Keywords
+
+**Automatic keyword enhancement with:**
+```typescript
+const BBS_KEYWORDS = [
+  'terminal computing', 'bulletin board system', 'retro computing',
+  'hacker culture', 'command line', 'tech terminal', 'ANSI art',
+  'vintage computing', 'system administration', 'cybersecurity'
+];
+```
+
+These keywords are automatically merged with your custom keywords to maintain the BBS aesthetic in search results.
+
+### SEO Configuration Workflow
+
+1. **Set site defaults** in `src/config/seo.ts`
+2. **Customize per post** using `seo` frontmatter fields (optional)
+3. **Test with browser dev tools** to verify meta tags
+4. **Validate structured data** with Google's Rich Results Test
+5. **Check social previews** with Facebook Debugger or Twitter Card Validator
+
 ## 🔄 Dynamic Content Updates
 
 ### Homepage Sections
