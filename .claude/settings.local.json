@@ -17,7 +17,10 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "mcp__playwright__browser_select_option",
       "mcp__playwright__browser_click",
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:www.webfontfree.com)",
+      "Bash(wget:*)",
+      "Bash(woff2_compress:*)"
     ],
     "deny": [],
     "ask": []
