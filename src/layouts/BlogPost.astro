@@ -1,349 +1,403 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import { FOOTER_CONFIG } from '../consts';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import { FOOTER_CONFIG } from "../consts";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<script src="/terminal.js" is:inline></script>
-		<script src="/theme-switcher.js" is:inline></script>
-		<script is:inline>
-			document.addEventListener('DOMContentLoaded', function() {
-				// Force image responsiveness in blog posts
-				const blogImages = document.querySelectorAll('.blog-content img');
-				blogImages.forEach(function(img) {
-					// Remove HTML width/height attributes
-					img.removeAttribute('width');
-					img.removeAttribute('height');
-					
-					// Force CSS styles directly
-					img.style.cssText = 'width: 80% !important; max-width: 80% !important; height: auto !important; display: block !important; margin: 2em auto !important; object-fit: contain !important;';
-				});
-				
-				// Initialize theme selector
-				const placeholder = document.getElementById('theme-selector-placeholder');
-				if (placeholder && window.ThemeSwitcher) {
-					const selector = window.ThemeSwitcher.createThemeSelector();
-					placeholder.appendChild(selector);
-				}
-			});
-		</script>
-		<style>
-			/* Terminal-specific blog post styles */
-			.blog-container {
-				max-width: 80ch;
-				width: 100%;
-				margin: 0 auto;
-				padding: 2em;
-				position: relative;
-				box-sizing: border-box;
-				overflow-x: hidden;
-			}
+  <head>
+    <BaseHead title={title} description={description} />
+    <script src="/terminal.js" is:inline></script>
+    <script src="/theme-switcher.js" is:inline></script>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Force image responsiveness in blog posts
+        const blogImages = document.querySelectorAll(".blog-content img");
+        blogImages.forEach(function (img) {
+          // Remove HTML width/height attributes
+          img.removeAttribute("width");
+          img.removeAttribute("height");
 
-			.blog-header {
-				border: double 3px var(--orange);
-				padding: 1em;
-				margin-bottom: 2em;
-				background: var(--bg0);
-				text-align: center;
-			}
+          // Force CSS styles directly
+          img.style.cssText =
+            "width: 80% !important; max-width: 80% !important; height: auto !important; display: block !important; margin: 2em auto !important; object-fit: contain !important;";
+        });
 
-			.blog-title {
-				color: var(--yellow);
-				font-size: 1.8em;
-				margin-bottom: 0.5em;
-				text-shadow: 1px 1px 0 var(--red);
-			}
+        // Initialize theme selector
+        const placeholder = document.getElementById(
+          "theme-selector-placeholder"
+        );
+        if (placeholder && window.ThemeSwitcher) {
+          const selector = window.ThemeSwitcher.createThemeSelector();
+          placeholder.appendChild(selector);
+        }
+      });
+    </script>
+    <style is:global>
+      /* Terminal-specific blog post styles - GLOBAL SCOPE */
+      .blog-container {
+        max-width: 80ch;
+        width: 100%;
+        margin: 0 auto;
+        padding: 2em;
+        position: relative;
+        box-sizing: border-box;
+        overflow-x: hidden;
+      }
 
-			.blog-meta {
-				color: var(--aqua);
-				font-size: 0.9em;
-				margin-bottom: 0.5em;
-			}
+      .blog-header {
+        border: double 3px var(--orange);
+        padding: 1em;
+        margin-bottom: 2em;
+        background: var(--bg0);
+        text-align: center;
+      }
 
-			.blog-nav {
-				border: solid 3px var(--blue);
-				padding: 1em;
-				margin-bottom: 2em;
-				background: var(--bg0);
-				text-align: center;
-			}
+      .blog-title {
+        color: var(--yellow);
+        font-size: 1.8em;
+        margin-bottom: 0.5em;
+        text-shadow: 1px 1px 0 var(--red);
+      }
 
-			.blog-nav a {
-				color: var(--aqua);
-				text-decoration: none;
-				margin: 0 1em;
-				padding: 0.2em 0.5em;
-				transition: all 0.1s;
-			}
+      .blog-meta {
+        color: var(--aqua);
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+      }
 
-			.blog-nav a:hover {
-				background: var(--yellow);
-				color: var(--bg0);
-			}
+      .blog-nav {
+        border: solid 3px var(--blue);
+        padding: 1em;
+        margin-bottom: 2em;
+        background: var(--bg0);
+        text-align: center;
+      }
 
-			.blog-content {
-				border: solid 2px var(--green);
-				padding: 2em;
-				margin: 2em 0;
-				background: var(--bg1);
-				color: var(--fg1);
-				line-height: 1.6;
-				overflow-x: hidden;
-				word-wrap: break-word;
-				width: 100%;
-				max-width: 100%;
-				box-sizing: border-box;
-				contain: layout style;
-			}
+      .blog-nav a {
+        color: var(--aqua);
+        text-decoration: none;
+        margin: 0 1em;
+        padding: 0.2em 0.5em;
+        transition: all 0.1s;
+      }
 
-			.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
-				color: var(--yellow);
-				margin: 1.5em 0 0.5em 0;
-				text-shadow: 1px 1px 0 var(--bg0);
-			}
+      .blog-nav a:hover {
+        background: var(--yellow);
+        color: var(--bg0);
+      }
 
-			.blog-content h1 { font-size: 1.8em; }
-			.blog-content h2 { font-size: 1.5em; }
-			.blog-content h3 { font-size: 1.3em; }
+      .blog-content {
+        border: solid 2px var(--green);
+        padding: 2em;
+        margin: 2em 0;
+        background: var(--bg1);
+        color: var(--fg1);
+        line-height: 1.6;
+        overflow-x: hidden;
+        word-wrap: break-word;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        contain: layout style;
+      }
 
-			.blog-content p {
-				margin-bottom: 1em;
-				color: var(--fg1);
-			}
+      .blog-content h1,
+      .blog-content h2,
+      .blog-content h3,
+      .blog-content h4,
+      .blog-content h5,
+      .blog-content h6 {
+        color: var(--yellow);
+        margin: 1.5em 0 0.5em 0;
+        text-shadow: 1px 1px 0 var(--bg0);
+      }
 
-			.blog-content a {
-				color: var(--fg0);
-				text-decoration: none;
-			}
+      .blog-content h1 {
+        font-size: 1.8em;
+      }
+      .blog-content h2 {
+        font-size: 1.5em;
+      }
+      .blog-content h3 {
+        font-size: 1.3em;
+      }
 
-			.blog-content a:hover {
-				color: var(--yellow);
-				text-decoration: underline;
-			}
+      .blog-content p {
+        margin-bottom: 1em;
+        color: var(--fg1);
+      }
 
-			.blog-content code {
-				background: var(--bg0);
-				color: var(--orange);
-				padding: 0.2em 0.4em;
-				border: 1px solid var(--bg3);
-				font-family: 'Perfect DOS VGA', 'Courier New', monospace;
-			}
+      /* Override default link colors with highest specificity */
+      .blog-content a,
+      .blog-content a:link,
+      .blog-content a:visited,
+      .blog-content p a,
+      .blog-content p a:link,
+      .blog-content p a:visited {
+        color: var(--fg0) !important;
+        text-decoration: none !important;
+      }
 
-			.blog-content pre {
-				background: var(--bg0);
-				color: var(--fg1);
-				padding: 1em;
-				border: 2px solid var(--bg3);
-				overflow-x: auto;
-				margin: 1em 0;
-			}
+      .blog-content a:hover,
+      .blog-content a:active,
+      .blog-content p a:hover,
+      .blog-content p a:active {
+        color: var(--yellow) !important;
+        text-decoration: underline !important;
+      }
 
-			.blog-content pre code {
-				background: none;
-				border: none;
-				padding: 0;
-				color: var(--fg1);
-			}
+      /* Ensure no browser defaults override */
+      article.blog-content a {
+        color: var(--fg0) !important;
+      }
 
-			.blog-content blockquote {
-				border-left: 4px solid var(--purple);
-				padding-left: 1em;
-				margin: 1em 0;
-				color: var(--fg2);
-				font-style: italic;
-			}
+      article.blog-content a:visited {
+        color: var(--fg0) !important;
+      }
 
-			.blog-content ul, .blog-content ol {
-				margin: 1em 0;
-				padding-left: 2em;
-			}
+      article.blog-content a:hover,
+      article.blog-content a:active {
+        color: var(--yellow) !important;
+      }
 
-			.blog-content li {
-				margin-bottom: 0.5em;
-				color: var(--fg1);
-			}
+      /* Nuclear option - override all possible link selectors */
+      .blog-content a[href],
+      .blog-content a[href]:link,
+      .blog-content a[href]:visited {
+        color: var(--red) !important;
+        text-decoration: none !important;
+      }
 
-			.blog-content hr {
-				border: none;
-				border-top: 2px solid var(--bg3);
-				margin: 2em 0;
-			}
+      .blog-content a[href]:hover,
+      .blog-content a[href]:active {
+        color: var(--yellow) !important;
+        text-decoration: underline !important;
+      }
 
-			/* Target Astro's actual image component attribute */
-			.blog-content [data-image-component="true"] {
-				width: 80% !important;
-				max-width: 80% !important;
-				height: auto !important;
-				margin: 2em auto !important;
-				display: block !important;
-				object-fit: contain !important;
-				object-position: center !important;
-			}
+      .blog-content code {
+        background: var(--bg0);
+        color: var(--orange);
+        padding: 0.2em 0.4em;
+        border: 1px solid var(--bg3);
+        font-family: "Perfect DOS VGA", "Courier New", monospace;
+      }
 
-			/* Target markdown images in paragraphs */
-			.blog-content p img,
-			.blog-content p [data-image-component="true"] {
-				width: 80% !important;
-				max-width: 80% !important;
-				height: auto !important;
-				margin: 2em auto !important;
-				display: block !important;
-				border: 2px solid var(--bg3);
-				border-radius: 4px;
-			}
+      .blog-content pre {
+        background: var(--bg0);
+        color: var(--fg1);
+        padding: 1em;
+        border: 2px solid var(--bg3);
+        overflow-x: auto;
+        margin: 1em 0;
+      }
 
-			/* Center the paragraph containing the image */
-			.blog-content p:has(img),
-			.blog-content p:has([data-image-component="true"]) {
-				text-align: center;
-				margin: 2em 0;
-			}
+      .blog-content pre code {
+        background: none;
+        border: none;
+        padding: 0;
+        color: var(--fg1);
+      }
 
-			/* Force any oversized content to fit */
-			.blog-content * {
-				max-width: 100%;
-				box-sizing: border-box;
-			}
+      .blog-content blockquote {
+        border-left: 4px solid var(--purple);
+        padding-left: 1em;
+        margin: 1em 0;
+        color: var(--fg2);
+        font-style: italic;
+      }
 
-			/* Universal image constraints - override HTML attributes */
-			.blog-content img {
-				width: 80% !important;
-				max-width: 80% !important;
-				height: auto !important;
-				object-fit: contain !important;
-				object-position: center !important;
-				margin: 2em auto !important;
-				display: block !important;
-			}
-			
-			/* Force override HTML width/height attributes with higher specificity */
-			.blog-content img[width][height],
-			.blog-content img[data-image-component="true"] {
-				width: 80% !important;
-				max-width: 80% !important;
-				height: auto !important;
-				min-width: 0 !important;
-			}
-			
-			/* Nuclear approach - target by exact attributes */
-			img[width="960"][height="480"],
-			img[data-image-component="true"][width][height] {
-				width: 80% !important;
-				max-width: 80% !important;
-				height: auto !important;
-				min-width: 0 !important;
-			}
+      .blog-content ul,
+      .blog-content ol {
+        margin: 1em 0;
+        padding-left: 2em;
+      }
 
-			/* Nuclear option - force ALL content to fit */
-			.blog-content *,
-			.blog-content *::before,
-			.blog-content *::after {
-				max-width: 100% !important;
-				box-sizing: border-box !important;
-			}
+      .blog-content li {
+        margin-bottom: 0.5em;
+        color: var(--fg1);
+      }
 
-			/* Override any inline styles */
-			.blog-content img[style],
-			.blog-content picture[style],
-			.blog-content [style*="width"],
-			.blog-content [style*="height"] {
-				max-width: 80% !important;
-				width: auto !important;
-				height: auto !important;
-				margin: 2em auto !important;
-			}
+      .blog-content hr {
+        border: none;
+        border-top: 2px solid var(--bg3);
+        margin: 2em 0;
+      }
 
-			/* Specific targeting for any element with background images */
-			.blog-content [style*="background-image"] {
-				max-width: 100% !important;
-				background-size: contain !important;
-				background-repeat: no-repeat !important;
-			}
+      /* Target Astro's actual image component attribute */
+      .blog-content [data-image-component="true"] {
+        width: 80% !important;
+        max-width: 80% !important;
+        height: auto !important;
+        margin: 2em auto !important;
+        display: block !important;
+        object-fit: contain !important;
+        object-position: center !important;
+      }
 
-			.blog-footer {
-				text-align: center;
-				margin-top: 3em;
-				padding: 1em;
-				border-top: double 3px var(--fg1);
-				color: var(--fg3);
-			}
+      /* Target markdown images in paragraphs */
+      .blog-content p img,
+      .blog-content p [data-image-component="true"] {
+        width: 80% !important;
+        max-width: 80% !important;
+        height: auto !important;
+        margin: 2em auto !important;
+        display: block !important;
+        border: 2px solid var(--bg3);
+        border-radius: 4px;
+      }
 
-			@media (max-width: 768px) {
-				.blog-container {
-					padding: 1em;
-				}
-				
-				.blog-content {
-					padding: 1em;
-					overflow-x: auto;
-				}
-				
-				.blog-content img {
-					transform: scale(0.9) !important;
-					margin: 1em auto !important;
-				}
-				
-				.blog-content picture {
-					transform: scale(0.9) !important;
-					margin: 1em auto !important;
-				}
-				
-				.blog-content picture img {
-					margin: 0 auto !important;
-				}
-				
-				.blog-title {
-					font-size: 1.4em;
-				}
-				
-				.blog-nav a {
-					display: block;
-					margin: 0.5em 0;
-				}
-			}
-		</style>
-	</head>
+      /* Center the paragraph containing the image */
+      .blog-content p:has(img),
+      .blog-content p:has([data-image-component="true"]) {
+        text-align: center;
+        margin: 2em 0;
+      }
 
-	<body>
-		<div class="blog-container">
-			<div class="blog-header">
-				<div class="blog-title">{title}</div>
-				<div class="blog-meta">
-					Published: {pubDate.toLocaleDateString()} 
-					{updatedDate && ` • Updated: ${updatedDate.toLocaleDateString()}`}
-				</div>
-				<div class="blog-meta">Tech Article • NeuralKnot Archive</div>
-				<div class="theme-selector-container">
-					<span class="theme-selector-label">THEME:</span>
-					<div id="theme-selector-placeholder"></div>
-				</div>
-			</div>
+      /* Force any oversized content to fit */
+      .blog-content * {
+        max-width: 100%;
+        box-sizing: border-box;
+      }
 
-			<div class="blog-nav">
-				<a href="/">◄ Home Terminal</a>
-				<a href="/blog">◄ Blog Archives</a>
-				<a href="/about">About System</a>
-			</div>
+      /* Universal image constraints - override HTML attributes */
+      .blog-content img {
+        width: 80% !important;
+        max-width: 80% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        margin: 2em auto !important;
+        display: block !important;
+      }
 
-			<article class="blog-content">
-				<slot />
-			</article>
+      /* Force override HTML width/height attributes with higher specificity */
+      .blog-content img[width][height],
+      .blog-content img[data-image-component="true"] {
+        width: 80% !important;
+        max-width: 80% !important;
+        height: auto !important;
+        min-width: 0 !important;
+      }
 
-			<div class="blog-footer">
-				<div>{FOOTER_CONFIG.post.statusLine}</div>
-				<div class="blink">{FOOTER_CONFIG.post.promptText}<span class="cursor"></span></div>
-				<div style="margin-top: 1em; font-size: 0.8em;">
-					{FOOTER_CONFIG.common.copyright} Tech Archive<br>
-					Article: "{title}" • {FOOTER_CONFIG.common.fidonet}
-				</div>
-			</div>
-		</div>
-	</body>
+      /* Nuclear approach - target by exact attributes */
+      img[width="960"][height="480"],
+      img[data-image-component="true"][width][height] {
+        width: 80% !important;
+        max-width: 80% !important;
+        height: auto !important;
+        min-width: 0 !important;
+      }
+
+      /* Nuclear option - force ALL content to fit */
+      .blog-content *,
+      .blog-content *::before,
+      .blog-content *::after {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Override any inline styles */
+      .blog-content img[style],
+      .blog-content picture[style],
+      .blog-content [style*="width"],
+      .blog-content [style*="height"] {
+        max-width: 80% !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 2em auto !important;
+      }
+
+      /* Specific targeting for any element with background images */
+      .blog-content [style*="background-image"] {
+        max-width: 100% !important;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+      }
+
+      .blog-footer {
+        text-align: center;
+        margin-top: 3em;
+        padding: 1em;
+        border-top: double 3px var(--fg1);
+        color: var(--fg3);
+      }
+
+      @media (max-width: 768px) {
+        .blog-container {
+          padding: 1em;
+        }
+
+        .blog-content {
+          padding: 1em;
+          overflow-x: auto;
+        }
+
+        .blog-content img {
+          transform: scale(0.9) !important;
+          margin: 1em auto !important;
+        }
+
+        .blog-content picture {
+          transform: scale(0.9) !important;
+          margin: 1em auto !important;
+        }
+
+        .blog-content picture img {
+          margin: 0 auto !important;
+        }
+
+        .blog-title {
+          font-size: 1.4em;
+        }
+
+        .blog-nav a {
+          display: block;
+          margin: 0.5em 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="blog-container">
+      <div class="blog-header">
+        <div class="blog-title">{title}</div>
+        <div class="blog-meta">
+          Published: {pubDate.toLocaleDateString()}
+          {updatedDate && ` • Updated: ${updatedDate.toLocaleDateString()}`}
+        </div>
+        <div class="blog-meta">Tech Article • NeuralKnot Archive</div>
+        <div class="theme-selector-container">
+          <span class="theme-selector-label">THEME:</span>
+          <div id="theme-selector-placeholder"></div>
+        </div>
+      </div>
+
+      <div class="blog-nav">
+        <a href="/">◄ Home Terminal</a>
+        <a href="/blog">◄ Blog Archives</a>
+        <a href="/about">About System</a>
+      </div>
+
+      <article class="blog-content">
+        <slot />
+      </article>
+
+      <div class="blog-footer">
+        <div>{FOOTER_CONFIG.post.statusLine}</div>
+        <div class="blink">
+          {FOOTER_CONFIG.post.promptText}<span class="cursor"></span>
+        </div>
+        <div style="margin-top: 1em; font-size: 0.8em;">
+          {FOOTER_CONFIG.common.copyright} Tech Archive<br />
+          Article: "{title}" • {FOOTER_CONFIG.common.fidonet}
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

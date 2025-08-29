@@ -16,7 +16,8 @@
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "mcp__playwright__browser_select_option",
-      "mcp__playwright__browser_click"
+      "mcp__playwright__browser_click",
+      "WebSearch"
     ],
     "deny": [],
     "ask": []
