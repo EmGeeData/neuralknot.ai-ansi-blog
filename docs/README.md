@@ -11,6 +11,7 @@ Welcome to the complete documentation for the NeuralKnot.ai BBS Terminal Blog. T
 ### ✍️ Content Creation
 - **[Content Guide](CONTENT_GUIDE.md)** - Creating blog posts with Markdown
 - **[MDX Guide](MDX_GUIDE.md)** - Interactive content with Markdown + JSX
+- **[Configuration Guide](CONFIGURATION_GUIDE.md)** - Site customization and settings
 
 ### 🎨 Theme Development
 - **[Theme Creation Guide](THEME_CREATION_GUIDE.md)** - Complete guide to designing custom themes
@@ -24,6 +25,7 @@ nk-ansi-blog/
 │   ├── README.md                   # This file - documentation index
 │   ├── CONTENT_GUIDE.md           # Blog content creation guide
 │   ├── MDX_GUIDE.md               # Interactive content guide
+│   ├── CONFIGURATION_GUIDE.md     # Site customization and settings
 │   ├── THEME_SWITCHER.md          # Theme switching quick reference
 │   └── THEME_CREATION_GUIDE.md    # Complete theme development guide
 ├── src/
@@ -38,6 +40,7 @@ nk-ansi-blog/
 ### For Content Creators
 - **New to the blog?** → Start with [Content Guide](CONTENT_GUIDE.md)
 - **Want interactive posts?** → See [MDX Guide](MDX_GUIDE.md)
+- **Customizing the site?** → Check [Configuration Guide](CONFIGURATION_GUIDE.md)
 - **Switching themes?** → Check [Theme Switcher Guide](THEME_SWITCHER.md)
 
 ### For Developers
@@ -55,7 +58,7 @@ The blog uses several configuration files for easy customization:
 
 | File | Purpose | Documentation |
 |------|---------|---------------|
-| `src/consts.ts` | Site constants, footer content | [Main README](../README.md) |
+| `src/consts.ts` | Site constants, footer content, recent updates | [Configuration Guide](CONFIGURATION_GUIDE.md) |
 | `src/styles/themes/` | Color theme definitions | [Theme Creation Guide](THEME_CREATION_GUIDE.md) |
 | `public/theme-switcher.js` | Dynamic theme switching | [Theme Switcher Guide](THEME_SWITCHER.md) |
 | `src/content/blog/` | Blog post content | [Content Guide](CONTENT_GUIDE.md) |

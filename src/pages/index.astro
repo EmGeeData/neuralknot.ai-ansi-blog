@@ -1,6 +1,6 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, FOOTER_CONFIG } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, FOOTER_CONFIG, RECENT_UPDATES, TERMINAL_STATUS, KNOWLEDGE_BASE } from '../consts';
 import { getCollection } from 'astro:content';
 
 const posts = (await getCollection('blog')).sort(
@@ -64,26 +64,24 @@ const posts = (await getCollection('blog')).sort(
 
 			<div class="stats">
 				<div class="stat-box">
-					<div class="stat-title">TERMINAL STATUS</div>
-					<div class="stat-value">3 Nodes Active</div>
-					<div class="stat-value">7 Hackers Online</div>
-					<div class="stat-value">2,048 Total Users</div>
+					<div class="stat-title">{TERMINAL_STATUS.title}</div>
+					{TERMINAL_STATUS.stats.map((stat) => (
+						<div class="stat-value">{stat}</div>
+					))}
 				</div>
 				<div class="stat-box">
-					<div class="stat-title">KNOWLEDGE BASE</div>
-					<div class="stat-value">1,337 Articles</div>
-					<div class="stat-value">420 Tutorials</div>
-					<div class="stat-value">69 Code Repos</div>
+					<div class="stat-title">{KNOWLEDGE_BASE.title}</div>
+					{KNOWLEDGE_BASE.stats.map((stat) => (
+						<div class="stat-value">{stat}</div>
+					))}
 				</div>
 			</div>
 
 			<div class="news">
 				<div class="news-title">═══ RECENT UPDATES ═══</div>
-				<div class="news-item">• New cybersecurity tutorial series uploaded to the archive</div>
-				<div class="news-item">• Hacker tools discussion board now available</div>
-				<div class="news-item">• Python implementation examples added to code section</div>
-				<div class="news-item">• Weekly tech industry analysis starting this Sunday</div>
-				<div class="news-item">• AI development tools and frameworks now online</div>
+				{RECENT_UPDATES.map((update) => (
+					<div class="news-item">{update}</div>
+				))}
 			</div>
 
 			<div class="footer">

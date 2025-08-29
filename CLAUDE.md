@@ -75,7 +75,11 @@ nk-ansi-blog/
 ```
 
 ### Configuration
-- **Site constants** in `src/consts.ts` including footer configuration for all page types
+- **Site constants** in `src/consts.ts` including:
+  - Site title and description
+  - Footer configuration for all page types (home, blog, about, posts)
+  - Recent updates array for easy news section management
+  - Shared content like copyright, sysop names, system details
 - **Theme system** with 13 themes in `src/styles/themes/` and dynamic switching via `public/theme-switcher.js`
 - **Content management** via Astro's content collections in `src/content/blog/`
 - **Perfect DOS VGA font** loaded from Google Fonts for authentic terminal typography

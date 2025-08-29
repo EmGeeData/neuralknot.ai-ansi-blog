@@ -124,6 +124,45 @@ See [docs/MDX_GUIDE.md](docs/MDX_GUIDE.md) for MDX-specific guidance.
 2. Modify the CSS variables in your new file
 3. Import your theme in `global.css`
 
+## ⚙️ Site Configuration
+
+The blog uses `src/consts.ts` for easy site customization:
+
+### Site Constants
+```typescript
+SITE_TITLE = 'NeuralKnot.ai BBS - Terminal Access'
+SITE_DESCRIPTION = 'Tech Terminal - Software Development, Hacking Culture, AI & Cybersecurity'
+```
+
+### Footer Configuration
+- **Page-specific footers** for home, blog, about, and individual posts
+- **Shared content** like copyright, sysop names, and system details
+- **Easy customization** without editing template files
+
+### Recent Updates
+```typescript
+RECENT_UPDATES = [
+  '• Your update here',
+  '• Another update',
+  // Add more updates as needed
+]
+```
+
+### Terminal Status & Knowledge Base
+```typescript
+TERMINAL_STATUS = {
+  title: 'TERMINAL STATUS',
+  stats: ['3 Nodes Active', '7 Hackers Online', '2,048 Total Users'],
+}
+
+KNOWLEDGE_BASE = {
+  title: 'KNOWLEDGE BASE', 
+  stats: ['1,337 Articles', '420 Tutorials', '69 Code Repos'],
+}
+```
+
+Simply edit these arrays to update the homepage statistics sections.
+
 ## 🛠️ Development Commands
 
 | Command | Action |
