@@ -1,0 +1,34 @@
+/* Tokyo Night Storm Theme - Lighter variant with more contrast */
+:root {
+    /* Base colors (storm variant - slightly lighter) */
+    --bg0: #1f2335;  /* Darkest */
+    --bg1: #24283b;  /* Main background */
+    --bg2: #292e42;  /* Selection/surface */
+    --bg3: #2f3349;  /* Elevated surface */
+    --bg4: #343a55;  /* Lighter surface */
+    
+    /* Text colors (light on dark) */
+    --fg0: #c0caf5;  /* Variables/bright text */
+    --fg1: #a9b1d6;  /* Primary text */
+    --fg2: #787c99;  /* Muted text */
+    --fg3: #6183bb;  /* Accent text */
+    --fg4: #515670;  /* Inactive text */
+    
+    /* Accent colors */
+    --red: #f7768e;      /* Red/Errors */
+    --green: #9ece6a;    /* Green/Strings */
+    --yellow: #e0af68;   /* Yellow/Parameters */
+    --blue: #7aa2f7;     /* Blue/Functions */
+    --purple: #bb9af7;   /* Magenta/Keywords */
+    --aqua: #7dcfff;     /* Cyan/Properties */
+    --orange: #ff9e64;   /* Orange/Constants */
+    
+    /* Dimmed accent colors */
+    --red-dim: #db4b4b;    /* Dimmed red */
+    --green-dim: #73daca;  /* Teal green */
+    --yellow-dim: #d18616; /* Dimmed yellow */
+    --blue-dim: #0db9d7;   /* Types blue */
+    --purple-dim: #9d7cd8; /* Dimmed purple */
+    --aqua-dim: #449dab;   /* Dimmed cyan */
+    --orange-dim: #d18616; /* Dimmed orange */
+}

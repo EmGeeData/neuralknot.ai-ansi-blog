@@ -10,6 +10,8 @@ This directory contains color themes for your BBS terminal blog. Each theme defi
 |-------|------|-------------|
 | **Gruvbox Dark** | `gruvbox-dark.css` | Default dark theme with warm, retro colors |
 | **Gruvbox Light** | `gruvbox-light.css` | Light version of Gruvbox for daytime reading |
+| **Gruvbox Material Dark** | `gruvbox-material-dark.css` | Softer contrast for extended coding sessions |
+| **Gruvbox Material Hard** | `gruvbox-material-hard.css` | Higher contrast Material variant |
 | **Cyberpunk** | `cyberpunk.css` | Neon colors for a cyberpunk aesthetic |
 | **Terminal Green** | `terminal-green.css` | Classic green terminal on black |
 | **Dracula** | `dracula.css` | Popular dark theme with purple accents |
@@ -17,6 +19,8 @@ This directory contains color themes for your BBS terminal blog. Each theme defi
 | **Catppuccin Frappé** | `catppuccin-frappe.css` | Dark pastel theme with soft contrast |
 | **Catppuccin Macchiato** | `catppuccin-macchiato.css` | Medium dark with balanced pastels |
 | **Catppuccin Mocha** | `catppuccin-mocha.css` | Darkest pastel theme with rich colors |
+| **Tokyo Night** | `tokyo-night.css` | Dark theme inspired by downtown Tokyo at night |
+| **Tokyo Night Storm** | `tokyo-night-storm.css` | Lighter variant with more contrast |
 
 ## 🔄 Switching Themes
 
@@ -149,6 +153,16 @@ To create your own theme:
 - **Vibe**: Deep, rich, cozy darkness
 - **Background**: Very dark with subtle tints
 - **Accents**: Vibrant but smooth pastels
+
+### Tokyo Night
+- **Vibe**: Urban nightlife, neon-lit streets
+- **Background**: Deep blue-black like night sky
+- **Accents**: Bright, saturated colors like city lights
+
+### Tokyo Night Storm
+- **Vibe**: Stormy night with better contrast
+- **Background**: Slightly lighter than Tokyo Night
+- **Accents**: Same vibrant colors with enhanced readability
 
 ## 🔧 Advanced Theme Features
 

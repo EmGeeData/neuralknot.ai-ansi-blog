@@ -1,0 +1,34 @@
+/* Gruvbox Material Hard Dark Theme - Higher contrast variant */
+:root {
+    /* Base colors (hard dark - highest contrast) */
+    --bg0: #141617;  /* Darkest background */
+    --bg1: #1d2021;  /* Main background */
+    --bg2: #282828;  /* Secondary background */
+    --bg3: #32302f;  /* Surface */
+    --bg4: #3c3836;  /* Elevated surface */
+    
+    /* Foreground colors (bright contrast) */
+    --fg0: #fbf1c7;  /* Brightest text */
+    --fg1: #ebdbb2;  /* Primary text */
+    --fg2: #d5c4a1;  /* Secondary text */
+    --fg3: #bdae93;  /* Muted text */
+    --fg4: #a89984;  /* Dimmed text */
+    
+    /* Material accent colors (vivid but eye-friendly) */
+    --red: #ea6962;      /* Soft red */
+    --green: #a9b665;    /* Muted green */
+    --yellow: #d8a657;   /* Warm yellow */
+    --blue: #7daea3;     /* Soft blue */
+    --purple: #d3869b;   /* Muted purple */
+    --aqua: #89b482;     /* Soft aqua */
+    --orange: #e78a4e;   /* Warm orange */
+    
+    /* Dimmed accent colors */
+    --red-dim: #cc241d;    /* Darker red */
+    --green-dim: #98971a;  /* Darker green */
+    --yellow-dim: #d79921; /* Darker yellow */
+    --blue-dim: #458588;   /* Darker blue */
+    --purple-dim: #b16286; /* Darker purple */
+    --aqua-dim: #689d6a;   /* Darker aqua */
+    --orange-dim: #d65d0e; /* Darker orange */
+}

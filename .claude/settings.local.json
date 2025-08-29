@@ -13,7 +13,8 @@
       "mcp__playwright__browser_evaluate",
       "mcp__playwright__browser_resize",
       "WebFetch(domain:catppuccin.com)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)"
     ],
     "deny": [],
     "ask": []
