@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Perfect+DOS+VGA:wght@400&display=swap");
 
 /* Import the current theme - change this line to switch themes */
-@import "./themes/gruvbox-material-hard.css";
+@import "./themes/terminal-green.css";
 
 * {
   margin: 0;
