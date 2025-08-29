@@ -1,0 +1,34 @@
+/* Cyberpunk Neon Theme */
+:root {
+    /* Background colors */
+    --bg0: #0a0a0a;
+    --bg1: #1a0a1a;
+    --bg2: #2a1a2a;
+    --bg3: #3a2a3a;
+    --bg4: #4a3a4a;
+    
+    /* Foreground colors */
+    --fg0: #ffffff;
+    --fg1: #e0e0e0;
+    --fg2: #c0c0c0;
+    --fg3: #a0a0a0;
+    --fg4: #808080;
+    
+    /* Accent colors */
+    --red: #ff073a;
+    --green: #39ff14;
+    --yellow: #ffff00;
+    --blue: #0080ff;
+    --purple: #ff00ff;
+    --aqua: #00ffff;
+    --orange: #ff8000;
+    
+    /* Dimmed accent colors */
+    --red-dim: #cc0530;
+    --green-dim: #2ecc10;
+    --yellow-dim: #cccc00;
+    --blue-dim: #0066cc;
+    --purple-dim: #cc00cc;
+    --aqua-dim: #00cccc;
+    --orange-dim: #cc6600;
+}

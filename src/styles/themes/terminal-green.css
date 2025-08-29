@@ -1,0 +1,34 @@
+/* Classic Terminal Green Theme */
+:root {
+    /* Background colors */
+    --bg0: #001100;
+    --bg1: #002200;
+    --bg2: #003300;
+    --bg3: #004400;
+    --bg4: #005500;
+    
+    /* Foreground colors */
+    --fg0: #00ff00;
+    --fg1: #00ee00;
+    --fg2: #00dd00;
+    --fg3: #00cc00;
+    --fg4: #00bb00;
+    
+    /* Accent colors - variations of green and amber */
+    --red: #ffaa00;      /* Amber for errors */
+    --green: #00ff00;    /* Bright green */
+    --yellow: #ffff00;   /* Bright yellow */
+    --blue: #00ccff;     /* Cyan-blue */
+    --purple: #ff00aa;   /* Magenta */
+    --aqua: #00ffaa;     /* Aqua-green */
+    --orange: #ff8800;   /* Orange */
+    
+    /* Dimmed accent colors */
+    --red-dim: #cc8800;
+    --green-dim: #00cc00;
+    --yellow-dim: #cccc00;
+    --blue-dim: #0099cc;
+    --purple-dim: #cc0088;
+    --aqua-dim: #00cc88;
+    --orange-dim: #cc6600;
+}
