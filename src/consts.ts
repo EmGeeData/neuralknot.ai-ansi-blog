@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'NeuralKnot.ai BBS - Terminal Access';
-export const SITE_DESCRIPTION = 'AI Research Terminal - Untangling Complexity';
+export const SITE_DESCRIPTION = 'Tech Terminal - Software Development, Hacking Culture, AI & Cybersecurity';
 
 // Footer Configuration
 export const FOOTER_CONFIG = {
@@ -15,7 +15,7 @@ export const FOOTER_CONFIG = {
   // Blog archive page footer
   blog: {
     statusLine: 'Archive Access • Session Active • Browse Mode',
-    promptText: 'Select paper to read',
+    promptText: 'Select article to read',
   },
   
   // About page footer
@@ -26,15 +26,15 @@ export const FOOTER_CONFIG = {
   
   // Blog post footer
   post: {
-    statusLine: 'Paper Access Complete • Session Active',
+    statusLine: 'Article Access Complete • Session Active',
     promptText: 'Ready for next command',
   },
   
   // Shared footer content
   common: {
     copyright: 'NeuralKnot.ai BBS © 2024',
-    sysop: 'AIResearcher',
-    cosysop: 'DeepMind',
+    sysop: 'TechHacker',
+    cosysop: 'CodeWeaver',
     systemName: 'GruvNet v2.0',
     fidonet: 'FidoNet 2:404/1337',
   },

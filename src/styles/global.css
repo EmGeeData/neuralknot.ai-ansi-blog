@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Perfect+DOS+VGA:wght@400&display=swap");
 
-/* Import the current theme - change this line to switch themes */
-@import "./themes/terminal-green.css";
+/* Theme is now loaded dynamically via JavaScript - see theme-switcher.js */
 
 * {
   margin: 0;

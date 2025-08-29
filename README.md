@@ -1,6 +1,6 @@
 # NeuralKnot.ai BBS Terminal Blog
 
-A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, featuring ANSI art aesthetics and multiple color themes.
+A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, covering software development, hacking culture, AI developments, and all things tech. Features ANSI art aesthetics and multiple color themes with authentic 1980s-90s terminal styling.
 
 ## 🖥️ Features
 
@@ -24,7 +24,7 @@ Switch between 13 carefully crafted color themes:
 | **Tokyo Night** | Original, Storm | Urban neon-inspired dark themes |
 | **Classic** | Cyberpunk, Terminal Green, Dracula | Iconic terminal and developer themes |
 
-See [THEME_SWITCHER.md](THEME_SWITCHER.md) for switching instructions.
+See [docs/THEME_SWITCHER.md](docs/THEME_SWITCHER.md) for switching instructions.
 
 ## 🚀 Quick Start
 
@@ -59,9 +59,12 @@ pnpm preview
 │   └── styles/
 │       ├── themes/         # 13 color theme files
 │       └── global.css      # Main stylesheet
-├── CONTENT_GUIDE.md        # Guide for creating blog posts
-├── MDX_GUIDE.md           # Guide for MDX content
-└── THEME_SWITCHER.md      # Theme switching instructions
+├── docs/                   # 📚 Complete documentation
+│   ├── README.md          # Documentation index
+│   ├── CONTENT_GUIDE.md   # Blog content creation guide
+│   ├── MDX_GUIDE.md       # Interactive content guide
+│   ├── THEME_SWITCHER.md  # Theme switching instructions
+│   └── THEME_CREATION_GUIDE.md # Complete theme development guide
 ```
 
 ## ✍️ Creating Content
@@ -81,7 +84,7 @@ heroImage: "/blog-images/your-image.jpg"
 Your content here...
 ```
 
-See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for detailed instructions.
+See [docs/CONTENT_GUIDE.md](docs/CONTENT_GUIDE.md) for detailed instructions.
 
 ### Interactive Content
 
@@ -99,7 +102,7 @@ import CustomComponent from '../components/CustomComponent.astro';
 <CustomComponent />
 ```
 
-See [MDX_GUIDE.md](MDX_GUIDE.md) for MDX-specific guidance.
+See [docs/MDX_GUIDE.md](docs/MDX_GUIDE.md) for MDX-specific guidance.
 
 ## 🎯 Theme Customization
 
@@ -162,7 +165,7 @@ This project is open source. Feel free to use it as a starting point for your ow
 
 ## 🎯 About NeuralKnot.ai
 
-This blog serves as the digital bulletin board for NeuralKnot.ai - exploring the intersection of artificial intelligence, retro computing, and digital archaeology.
+This blog serves as a digital bulletin board exploring software development, hacking culture, AI developments, cybersecurity, programming tutorials, tech industry analysis, and the evolving intersection of artificial intelligence with traditional computing and development practices.
 
 ---
 

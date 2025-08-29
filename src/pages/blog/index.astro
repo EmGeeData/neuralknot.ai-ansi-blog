@@ -13,13 +13,27 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={`Blog Archives - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
 		<script src="/terminal.js" is:inline></script>
+		<script src="/theme-switcher.js" is:inline></script>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', function() {
+				const placeholder = document.getElementById('theme-selector-placeholder');
+				if (placeholder && window.ThemeSwitcher) {
+					const selector = window.ThemeSwitcher.createThemeSelector();
+					placeholder.appendChild(selector);
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="header">
 				<div class="logo">NEURALKNOT.AI</div>
 				<div class="tagline">── BLOG ARCHIVES ──</div>
-				<div class="tagline">Archive Node • {posts.length} Research Papers Available</div>
+				<div class="tagline">Archive Node • {posts.length} Tech Articles Available</div>
+				<div class="theme-selector-container">
+					<span class="theme-selector-label">THEME:</span>
+					<div id="theme-selector-placeholder"></div>
+				</div>
 			</div>
 
 			<div class="menu">
@@ -30,14 +44,14 @@ const posts = (await getCollection('blog')).sort(
 			</div>
 
 			<div class="articles">
-				<div class="articles-title">═══ RESEARCH PAPERS ═══</div>
+				<div class="articles-title">═══ TECH ARTICLES ═══</div>
 				{posts.map((post) => (
 					<div class="article-item">
 						<div class="article-title">
 							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
 						</div>
 						<div class="article-meta">
-							Posted: {post.data.pubDate.toLocaleDateString()} | Category: AI Research | 
+							Posted: {post.data.pubDate.toLocaleDateString()} | Category: Tech | 
 							{post.data.updatedDate && `Updated: ${post.data.updatedDate.toLocaleDateString()}`}
 						</div>
 						<div class="article-desc">{post.data.description}</div>
@@ -48,7 +62,7 @@ const posts = (await getCollection('blog')).sort(
 			<div class="stats">
 				<div class="stat-box">
 					<div class="stat-title">ARCHIVE STATUS</div>
-					<div class="stat-value">{posts.length} Papers</div>
+					<div class="stat-value">{posts.length} Articles</div>
 					<div class="stat-value">Online Archive</div>
 					<div class="stat-value">Last Updated</div>
 				</div>
@@ -68,7 +82,7 @@ const posts = (await getCollection('blog')).sort(
 				<div class="blink">{FOOTER_CONFIG.blog.promptText}<span class="cursor"></span></div>
 				<div style="margin-top: 1em; font-size: 0.8em;">
 					{FOOTER_CONFIG.common.copyright} • Archive System v2.0<br>
-					Total Research Papers: {posts.length} • {FOOTER_CONFIG.common.fidonet}
+					Total Tech Articles: {posts.length} • {FOOTER_CONFIG.common.fidonet}
 				</div>
 			</div>
 		</div>

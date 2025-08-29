@@ -12,9 +12,10 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<script src="/terminal.js" is:inline></script>
+		<script src="/theme-switcher.js" is:inline></script>
 		<script is:inline>
-			// Force image responsiveness in blog posts
 			document.addEventListener('DOMContentLoaded', function() {
+				// Force image responsiveness in blog posts
 				const blogImages = document.querySelectorAll('.blog-content img');
 				blogImages.forEach(function(img) {
 					// Remove HTML width/height attributes
@@ -24,6 +25,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					// Force CSS styles directly
 					img.style.cssText = 'width: 80% !important; max-width: 80% !important; height: auto !important; display: block !important; margin: 2em auto !important; object-fit: contain !important;';
 				});
+				
+				// Initialize theme selector
+				const placeholder = document.getElementById('theme-selector-placeholder');
+				if (placeholder && window.ThemeSwitcher) {
+					const selector = window.ThemeSwitcher.createThemeSelector();
+					placeholder.appendChild(selector);
+				}
 			});
 		</script>
 		<style>
@@ -310,7 +318,11 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					Published: {pubDate.toLocaleDateString()} 
 					{updatedDate && ` • Updated: ${updatedDate.toLocaleDateString()}`}
 				</div>
-				<div class="blog-meta">Research Paper • NeuralKnot Archive</div>
+				<div class="blog-meta">Tech Article • NeuralKnot Archive</div>
+				<div class="theme-selector-container">
+					<span class="theme-selector-label">THEME:</span>
+					<div id="theme-selector-placeholder"></div>
+				</div>
 			</div>
 
 			<div class="blog-nav">
@@ -327,8 +339,8 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				<div>{FOOTER_CONFIG.post.statusLine}</div>
 				<div class="blink">{FOOTER_CONFIG.post.promptText}<span class="cursor"></span></div>
 				<div style="margin-top: 1em; font-size: 0.8em;">
-					{FOOTER_CONFIG.common.copyright} Research Archive<br>
-					Paper: "{title}" • {FOOTER_CONFIG.common.fidonet}
+					{FOOTER_CONFIG.common.copyright} Tech Archive<br>
+					Article: "{title}" • {FOOTER_CONFIG.common.fidonet}
 				</div>
 			</div>
 		</div>

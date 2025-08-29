@@ -13,13 +13,28 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<script src="/terminal.js" is:inline></script>
+		<script src="/theme-switcher.js" is:inline></script>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', function() {
+				// Initialize theme selector
+				const placeholder = document.getElementById('theme-selector-placeholder');
+				if (placeholder && window.ThemeSwitcher) {
+					const selector = window.ThemeSwitcher.createThemeSelector();
+					placeholder.appendChild(selector);
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<div class="container">
 			<div class="header">
 				<div class="logo">NEURALKNOT.AI</div>
-				<div class="tagline">── AI RESEARCH TERMINAL ──</div>
+				<div class="tagline">── TECH TERMINAL ──</div>
 				<div class="tagline">Node 1 of 3 • Connected at 56k</div>
+				<div class="theme-selector-container">
+					<span class="theme-selector-label">THEME:</span>
+					<div id="theme-selector-placeholder"></div>
+				</div>
 			</div>
 
 			<div class="ascii-art" id="ascii-art">
@@ -33,14 +48,14 @@ const posts = (await getCollection('blog')).sort(
 			</div>
 
 			<div class="articles">
-				<div class="articles-title">═══ LATEST RESEARCH ═══</div>
+				<div class="articles-title">═══ LATEST ARTICLES ═══</div>
 				{posts.slice(0, 3).map((post) => (
 					<div class="article-item">
 						<div class="article-title">
 							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
 						</div>
 						<div class="article-meta">
-							Posted: {post.data.pubDate.toLocaleDateString()} | Category: AI Research | Author: NeuralHacker
+							Posted: {post.data.pubDate.toLocaleDateString()} | Category: Tech | Author: NeuralHacker
 						</div>
 						<div class="article-desc">{post.data.description}</div>
 					</div>
@@ -51,12 +66,12 @@ const posts = (await getCollection('blog')).sort(
 				<div class="stat-box">
 					<div class="stat-title">TERMINAL STATUS</div>
 					<div class="stat-value">3 Nodes Active</div>
-					<div class="stat-value">7 Researchers Online</div>
+					<div class="stat-value">7 Hackers Online</div>
 					<div class="stat-value">2,048 Total Users</div>
 				</div>
 				<div class="stat-box">
 					<div class="stat-title">KNOWLEDGE BASE</div>
-					<div class="stat-value">1,337 Papers</div>
+					<div class="stat-value">1,337 Articles</div>
 					<div class="stat-value">420 Tutorials</div>
 					<div class="stat-value">69 Code Repos</div>
 				</div>
@@ -64,11 +79,11 @@ const posts = (await getCollection('blog')).sort(
 
 			<div class="news">
 				<div class="news-title">═══ RECENT UPDATES ═══</div>
-				<div class="news-item">• New transformer tutorial series uploaded to the archive</div>
-				<div class="news-item">• AI Ethics discussion board now available</div>
-				<div class="news-item">• PyTorch implementation examples added to code section</div>
-				<div class="news-item">• Weekly AI research paper review starting this Sunday</div>
-				<div class="news-item">• Neural network visualization tools now online</div>
+				<div class="news-item">• New cybersecurity tutorial series uploaded to the archive</div>
+				<div class="news-item">• Hacker tools discussion board now available</div>
+				<div class="news-item">• Python implementation examples added to code section</div>
+				<div class="news-item">• Weekly tech industry analysis starting this Sunday</div>
+				<div class="news-item">• AI development tools and frameworks now online</div>
 			</div>
 
 			<div class="footer">
