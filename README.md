@@ -1,62 +1,169 @@
-# Astro Starter Kit: Blog
+# NeuralKnot.ai BBS Terminal Blog
 
-```sh
-pnpm create astro@latest -- --template blog
+A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, featuring ANSI art aesthetics and multiple color themes.
+
+## 🖥️ Features
+
+- **BBS Terminal Aesthetic**: Authentic 1980s-90s terminal styling with CP437 encoding
+- **ANSI Art Integration**: ASCII art headers and visual elements
+- **13 Color Themes**: Including Gruvbox, Catppuccin, Tokyo Night, and more
+- **Perfect DOS VGA Font**: Authentic retro typography
+- **Responsive Images**: Optimized image handling for all screen sizes
+- **MDX Support**: Interactive content with Markdown + JSX
+- **Fast Performance**: Built on Astro for optimal loading speeds
+- **SEO Optimized**: Canonical URLs, OpenGraph, and sitemap support
+
+## 🎨 Available Themes
+
+Switch between 13 carefully crafted color themes:
+
+| Theme Family | Variants | Description |
+|-------------|----------|-------------|
+| **Gruvbox** | Dark, Light, Material Dark, Material Hard | Warm retro colors with excellent readability |
+| **Catppuccin** | Latte, Frappé, Macchiato, Mocha | Soothing pastel themes from light to dark |
+| **Tokyo Night** | Original, Storm | Urban neon-inspired dark themes |
+| **Classic** | Cyberpunk, Terminal Green, Dracula | Iconic terminal and developer themes |
+
+See [THEME_SWITCHER.md](THEME_SWITCHER.md) for switching instructions.
+
+## 🚀 Quick Start
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-Features:
-
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Project Structure
 
 ```text
 ├── public/
+│   ├── fonts/               # Perfect DOS VGA font files
+│   └── favicon.ico
 ├── src/
-│   ├── components/
-│   ├── content/
-│   ├── layouts/
-│   └── pages/
-├── astro.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
+│   ├── components/          # Reusable UI components
+│   ├── content/
+│   │   └── blog/           # Blog posts (Markdown/MDX)
+│   ├── layouts/
+│   │   ├── BaseLayout.astro # Main site layout
+│   │   └── BlogPost.astro  # Blog post layout
+│   ├── pages/              # Site pages and routing
+│   └── styles/
+│       ├── themes/         # 13 color theme files
+│       └── global.css      # Main stylesheet
+├── CONTENT_GUIDE.md        # Guide for creating blog posts
+├── MDX_GUIDE.md           # Guide for MDX content
+└── THEME_SWITCHER.md      # Theme switching instructions
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## ✍️ Creating Content
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Blog Posts
 
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
+Create new `.md` or `.mdx` files in `src/content/blog/`:
 
-Any static assets, like images, can be placed in the `public/` directory.
+```markdown
+---
+title: "Your Post Title"
+description: "Brief description"
+pubDate: "2024-01-01"
+heroImage: "/blog-images/your-image.jpg"
+---
 
-## 🧞 Commands
+Your content here...
+```
 
-All commands are run from the root of the project, from a terminal:
+See [CONTENT_GUIDE.md](CONTENT_GUIDE.md) for detailed instructions.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+### Interactive Content
 
-## 👀 Want to learn more?
+Use MDX for interactive elements:
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```mdx
+---
+title: "Interactive Post"
+description: "With JSX components"
+pubDate: "2024-01-01"
+---
 
-## Credit
+import CustomComponent from '../components/CustomComponent.astro';
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+<CustomComponent />
+```
+
+See [MDX_GUIDE.md](MDX_GUIDE.md) for MDX-specific guidance.
+
+## 🎯 Theme Customization
+
+### Switching Themes
+
+1. Open `src/styles/global.css`
+2. Change the import line:
+   ```css
+   @import './themes/your-preferred-theme.css';
+   ```
+3. Save and refresh
+
+### Creating Custom Themes
+
+1. Copy an existing theme:
+   ```bash
+   cp src/styles/themes/gruvbox-dark.css src/styles/themes/my-theme.css
+   ```
+2. Modify the CSS variables in your new file
+3. Import your theme in `global.css`
+
+## 🛠️ Development Commands
+
+| Command | Action |
+|---------|--------|
+| `pnpm dev` | Start development server at `localhost:4321` |
+| `pnpm build` | Build production site to `./dist/` |
+| `pnpm preview` | Preview production build locally |
+| `pnpm astro check` | Run Astro diagnostics |
+
+## 🎮 BBS Terminal Experience
+
+This blog recreates the authentic feel of 1980s-90s Bulletin Board Systems:
+
+- **CP437 Character Encoding**: Classic IBM PC character set
+- **Perfect DOS VGA Font**: Pixel-perfect retro typography
+- **Terminal UI Elements**: ASCII borders, headers, and navigation
+- **ANSI Color Codes**: Authentic 16-color terminal palette
+- **Vintage Aesthetics**: Scanlines, phosphor glow effects (optional)
+
+## 📊 Performance
+
+- **Lighthouse Score**: 100/100 performance
+- **Static Generation**: Pre-built pages for fast loading
+- **Optimized Images**: Automatic image compression and responsive sizing
+- **Minimal JavaScript**: Fast, progressive enhancement
+
+## 🔧 Technical Stack
+
+- **Framework**: [Astro](https://astro.build/) - Static site generator
+- **Styling**: CSS with custom properties for theming
+- **Typography**: Perfect DOS VGA webfont
+- **Content**: Markdown/MDX with frontmatter
+- **Build Tool**: Vite (included with Astro)
+- **Package Manager**: pnpm
+
+## 📝 License
+
+This project is open source. Feel free to use it as a starting point for your own BBS-style blog.
+
+## 🎯 About NeuralKnot.ai
+
+This blog serves as the digital bulletin board for NeuralKnot.ai - exploring the intersection of artificial intelligence, retro computing, and digital archaeology.
+
+---
+
+**Welcome to the neural network. Connection established. Enjoy your stay.** 🔌
