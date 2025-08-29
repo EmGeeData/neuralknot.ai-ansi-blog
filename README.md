@@ -2,7 +2,7 @@
 
 A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, covering software development, hacking culture, AI developments, and all things tech. Features ANSI art aesthetics and multiple color themes with authentic 1980s-90s terminal styling.
 
-## 🖥️ Features
+## Features
 
 - **BBS Terminal Aesthetic**: Authentic 1980s-90s terminal styling with CP437 encoding
 - **ANSI Art Integration**: ASCII art headers and visual elements
@@ -16,7 +16,7 @@ A retro-styled BBS (Bulletin Board System) terminal blog built with Astro, cover
 - **Centralized Configuration**: Easy content management through external config files
 - **Comprehensive About Page**: Detailed system information with homepage styling
 
-## 🎨 Available Themes
+## Available Themes
 
 Switch between 15 carefully crafted color themes:
 
@@ -30,7 +30,7 @@ Switch between 15 carefully crafted color themes:
 
 See [docs/THEME_SWITCHER.md](docs/THEME_SWITCHER.md) for switching instructions.
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -46,7 +46,7 @@ pnpm build
 pnpm preview
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 ├── public/
@@ -70,7 +70,7 @@ pnpm preview
 │       ├── themes/         # 15 color theme files
 │       ├── blog-post.css   # Dedicated blog post styles
 │       └── global.css      # Main stylesheet
-├── docs/                   # 📚 Complete documentation
+├── docs/                   # Complete documentation
 │   ├── README.md          # Documentation index
 │   ├── CONTENT_GUIDE.md   # Blog content creation guide
 │   ├── MDX_GUIDE.md       # Interactive content guide
@@ -78,7 +78,7 @@ pnpm preview
 │   └── THEME_CREATION_GUIDE.md # Complete theme development guide
 ```
 
-## ✍️ Creating Content
+## Creating Content
 
 ### Blog Posts
 
@@ -115,7 +115,7 @@ import CustomComponent from '../components/CustomComponent.astro';
 
 See [docs/MDX_GUIDE.md](docs/MDX_GUIDE.md) for MDX-specific guidance.
 
-## 🎯 Theme Customization
+## Theme Customization
 
 ### Switching Themes
 
@@ -135,7 +135,7 @@ See [docs/MDX_GUIDE.md](docs/MDX_GUIDE.md) for MDX-specific guidance.
 2. Modify the CSS variables in your new file
 3. Import your theme in `global.css`
 
-## 🔍 SEO & Social Media
+## SEO & Social Media
 
 The blog includes a comprehensive SEO system:
 
@@ -162,7 +162,7 @@ seo: {
 }
 ```
 
-## ⚙️ Site Configuration
+## Site Configuration
 
 The blog uses `src/consts.ts` for easy site customization:
 
@@ -201,7 +201,7 @@ KNOWLEDGE_BASE = {
 
 Simply edit these arrays to update the homepage statistics sections.
 
-## 🚀 Recent Improvements
+## Recent Improvements
 
 ### Performance & Privacy
 - **Local Font Hosting**: Perfect DOS VGA font now served locally (78% smaller with WOFF2 format)
@@ -225,7 +225,7 @@ Simply edit these arrays to update the homepage statistics sections.
 - **Content Schema Validation**: Enhanced frontmatter schema with optional SEO fields
 - **Modular Architecture**: Cleaner separation of concerns and easier maintenance
 
-## 🛠️ Development Commands
+## Development Commands
 
 | Command | Action |
 |---------|--------|
@@ -234,7 +234,7 @@ Simply edit these arrays to update the homepage statistics sections.
 | `pnpm preview` | Preview production build locally |
 | `pnpm astro check` | Run Astro diagnostics |
 
-## 🎮 BBS Terminal Experience
+## BBS Terminal Experience
 
 This blog recreates the authentic feel of 1980s-90s Bulletin Board Systems:
 
@@ -244,14 +244,14 @@ This blog recreates the authentic feel of 1980s-90s Bulletin Board Systems:
 - **ANSI Color Codes**: Authentic 16-color terminal palette
 - **Vintage Aesthetics**: Scanlines, phosphor glow effects (optional)
 
-## 📊 Performance
+## Performance
 
 - **Lighthouse Score**: 100/100 performance
 - **Static Generation**: Pre-built pages for fast loading
 - **Optimized Images**: Automatic image compression and responsive sizing
 - **Minimal JavaScript**: Fast, progressive enhancement
 
-## 🔧 Technical Stack
+## Technical Stack
 
 - **Framework**: [Astro](https://astro.build/) - Static site generator
 - **Styling**: CSS with custom properties for theming
@@ -260,14 +260,14 @@ This blog recreates the authentic feel of 1980s-90s Bulletin Board Systems:
 - **Build Tool**: Vite (included with Astro)
 - **Package Manager**: pnpm
 
-## 📝 License
+## License
 
 This project is open source. Feel free to use it as a starting point for your own BBS-style blog.
 
-## 🎯 About NeuralKnot.ai
+## About NeuralKnot.ai
 
 This blog serves as a digital bulletin board exploring software development, hacking culture, AI developments, cybersecurity, programming tutorials, tech industry analysis, and the evolving intersection of artificial intelligence with traditional computing and development practices.
 
 ---
 
-**Welcome to the neural network. Connection established. Enjoy your stay.** 🔌
+**Welcome to the neural network. Connection established. Enjoy your stay.**
