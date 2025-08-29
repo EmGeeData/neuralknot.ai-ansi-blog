@@ -49,7 +49,7 @@ const posts = (await getCollection('blog')).sort(
 
 			<div class="articles">
 				<div class="articles-title">═══ LATEST ARTICLES ═══</div>
-				{posts.slice(0, 3).map((post) => (
+				{posts.slice(0, 16).map((post) => (
 					<div class="article-item">
 						<div class="article-title">
 							<a href={`/blog/${post.id}/`}>{post.data.title}</a>
