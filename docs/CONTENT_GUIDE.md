@@ -122,6 +122,7 @@ Use the `seo` object for advanced SEO customization:
 - Use custom SEO fields only when you need specific optimization
 - The system automatically generates social media cards and structured data
 - Keywords are enhanced with site-wide BBS/tech themed terms
+- See [Configuration Guide](CONFIGURATION_GUIDE.md) for advanced SEO settings
 
 ## 🎨 Content Guidelines for BBS Theme
 

@@ -156,7 +156,7 @@ The footer and status messages automatically adapt to theme colors through CSS v
 }
 ```
 
-This means your custom footer text will automatically work with all 13 available themes.
+This means your custom footer text will automatically work with all 15 available themes.
 
 ## 🔍 SEO Configuration
 

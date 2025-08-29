@@ -7,6 +7,7 @@ Welcome to the complete documentation for the NeuralKnot.ai BBS Terminal Blog. T
 ### 🚀 Quick Start
 - **[Main README](../README.md)** - Project overview, setup, and basic usage
 - **[Theme Switcher Guide](THEME_SWITCHER.md)** - How to switch between color themes
+- **[Improvements Roadmap](../IMPROVEMENTS.md)** - Suggested enhancements and future features
 
 ### ✍️ Content Creation
 - **[Content Guide](CONTENT_GUIDE.md)** - Creating blog posts with Markdown
@@ -130,9 +131,11 @@ The blog includes 15 pre-built color themes:
 | Main README | Current | ✅ Complete |
 | Content Guide | Current | ✅ Complete |
 | MDX Guide | Current | ✅ Complete |
+| Configuration Guide | Current | ✅ Complete |
 | Theme Switcher Guide | Current | ✅ Complete |
 | Theme Creation Guide | Current | ✅ Complete |
 | Theme System README | Current | ✅ Complete |
+| Improvements Roadmap | Current | ✅ Complete |
 
 ---
 
