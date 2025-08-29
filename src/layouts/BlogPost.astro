@@ -11,13 +11,30 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<script src="/terminal.js" is:inline></script>
+		<script is:inline>
+			// Force image responsiveness in blog posts
+			document.addEventListener('DOMContentLoaded', function() {
+				const blogImages = document.querySelectorAll('.blog-content img');
+				blogImages.forEach(function(img) {
+					// Remove HTML width/height attributes
+					img.removeAttribute('width');
+					img.removeAttribute('height');
+					
+					// Force CSS styles directly
+					img.style.cssText = 'width: 80% !important; max-width: 80% !important; height: auto !important; display: block !important; margin: 2em auto !important; object-fit: contain !important;';
+				});
+			});
+		</script>
 		<style>
 			/* Terminal-specific blog post styles */
 			.blog-container {
 				max-width: 80ch;
+				width: 100%;
 				margin: 0 auto;
 				padding: 2em;
 				position: relative;
+				box-sizing: border-box;
+				overflow-x: hidden;
 			}
 
 			.blog-header {
@@ -69,6 +86,12 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				background: var(--bg1);
 				color: var(--fg1);
 				line-height: 1.6;
+				overflow-x: hidden;
+				word-wrap: break-word;
+				width: 100%;
+				max-width: 100%;
+				box-sizing: border-box;
+				contain: layout style;
 			}
 
 			.blog-content h1, .blog-content h2, .blog-content h3, .blog-content h4, .blog-content h5, .blog-content h6 {
@@ -143,12 +166,137 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				margin: 2em 0;
 			}
 
+			/* Target Astro's actual image component attribute */
+			.blog-content [data-image-component="true"] {
+				width: 80% !important;
+				max-width: 80% !important;
+				height: auto !important;
+				margin: 2em auto !important;
+				display: block !important;
+				object-fit: contain !important;
+				object-position: center !important;
+			}
+
+			/* Target markdown images in paragraphs */
+			.blog-content p img,
+			.blog-content p [data-image-component="true"] {
+				width: 80% !important;
+				max-width: 80% !important;
+				height: auto !important;
+				margin: 2em auto !important;
+				display: block !important;
+				border: 2px solid var(--bg3);
+				border-radius: 4px;
+			}
+
+			/* Center the paragraph containing the image */
+			.blog-content p:has(img),
+			.blog-content p:has([data-image-component="true"]) {
+				text-align: center;
+				margin: 2em 0;
+			}
+
+			/* Force any oversized content to fit */
+			.blog-content * {
+				max-width: 100%;
+				box-sizing: border-box;
+			}
+
+			/* Universal image constraints - override HTML attributes */
+			.blog-content img {
+				width: 80% !important;
+				max-width: 80% !important;
+				height: auto !important;
+				object-fit: contain !important;
+				object-position: center !important;
+				margin: 2em auto !important;
+				display: block !important;
+			}
+			
+			/* Force override HTML width/height attributes with higher specificity */
+			.blog-content img[width][height],
+			.blog-content img[data-image-component="true"] {
+				width: 80% !important;
+				max-width: 80% !important;
+				height: auto !important;
+				min-width: 0 !important;
+			}
+			
+			/* Nuclear approach - target by exact attributes */
+			img[width="960"][height="480"],
+			img[data-image-component="true"][width][height] {
+				width: 80% !important;
+				max-width: 80% !important;
+				height: auto !important;
+				min-width: 0 !important;
+			}
+
+			/* Nuclear option - force ALL content to fit */
+			.blog-content *,
+			.blog-content *::before,
+			.blog-content *::after {
+				max-width: 100% !important;
+				box-sizing: border-box !important;
+			}
+
+			/* Override any inline styles */
+			.blog-content img[style],
+			.blog-content picture[style],
+			.blog-content [style*="width"],
+			.blog-content [style*="height"] {
+				max-width: 80% !important;
+				width: auto !important;
+				height: auto !important;
+				margin: 2em auto !important;
+			}
+
+			/* Specific targeting for any element with background images */
+			.blog-content [style*="background-image"] {
+				max-width: 100% !important;
+				background-size: contain !important;
+				background-repeat: no-repeat !important;
+			}
+
 			.blog-footer {
 				text-align: center;
 				margin-top: 3em;
 				padding: 1em;
 				border-top: double 3px var(--fg1);
 				color: var(--fg3);
+			}
+
+			@media (max-width: 768px) {
+				.blog-container {
+					padding: 1em;
+				}
+				
+				.blog-content {
+					padding: 1em;
+					overflow-x: auto;
+				}
+				
+				.blog-content img {
+					transform: scale(0.9) !important;
+					margin: 1em auto !important;
+				}
+				
+				.blog-content picture {
+					transform: scale(0.9) !important;
+					margin: 1em auto !important;
+				}
+				
+				.blog-content picture img {
+					margin: 0 auto !important;
+				}
+				
+				.blog-title {
+					font-size: 1.4em;
+				}
+				
+				.blog-nav a {
+					display: block;
+					margin: 0.5em 0;
+				}
 			}
 		</style>
 	</head>

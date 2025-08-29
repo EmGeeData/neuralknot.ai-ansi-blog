@@ -4,7 +4,14 @@
       "mcp__playwright__browser_close",
       "Bash(pnpm dev:*)",
       "Bash(pkill:*)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs",
+      "Bash(npm run dev:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_resize"
     ],
     "deny": [],
     "ask": []
