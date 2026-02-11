@@ -12,21 +12,21 @@ async function loadAsciiArt() {
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     loadAsciiArt();
-    
+
     const cursor = document.querySelector('.cursor');
     if (cursor) {
         setTimeout(() => {
             cursor.style.animation = 'blink 1s infinite';
         }, 1000);
     }
-});
 
-// Add click handlers only for non-functional menu items (those with # href)
-document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers only for non-functional menu items (those with # href)
     document.querySelectorAll('.menu-item[href="#"]').forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
-            const option = this.textContent.match(/\[(.)\]/)[1];
+            const match = this.textContent.match(/\[(.)\]/);
+            if (!match) return;
+            const option = match[1];
             alert(`Terminal Access: "${option}"\n\n${this.textContent.split('] ')[1]} section loading...\n\nConnection established.`);
         });
     });

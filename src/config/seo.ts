@@ -6,7 +6,7 @@ export const SEO_DEFAULTS = {
   siteUrl: "https://neuralknot.ai", // Update with your actual domain
   defaultTitle: SITE_TITLE,
   defaultDescription: SITE_DESCRIPTION,
-  defaultImage: "/images/og-neuralknot-bbs.jpg", // Create this OG image
+  defaultImage: "/favicon.svg",
   twitterHandle: "@neuralknot", // Update with actual handle
   author: "NeuralKnot Team",
   locale: "en_US",
@@ -121,12 +121,7 @@ export function generateWebsiteStructuredData() {
     "name": SEO_DEFAULTS.siteName,
     "url": SEO_DEFAULTS.siteUrl,
     "description": SEO_DEFAULTS.defaultDescription,
-    "publisher": SEO_DEFAULTS.organization,
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": `${SEO_DEFAULTS.siteUrl}/search?q={search_term_string}`,
-      "query-input": "required name=search_term_string"
-    }
+    "publisher": SEO_DEFAULTS.organization
   };
 }
 

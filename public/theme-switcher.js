@@ -55,7 +55,7 @@ function switchTheme(themeName) {
   }
 
   const themeLink = getThemeLink();
-  const newHref = `/src/styles/themes/${themeName}.css`;
+  const newHref = `/themes/${themeName}.css`;
   
   // Add loading class to body for transition effect
   document.body.classList.add('theme-switching');
@@ -124,7 +124,7 @@ function initThemeSystem() {
   
   // Apply theme if different from current
   const themeLink = getThemeLink();
-  const expectedHref = `/src/styles/themes/${currentTheme}.css`;
+  const expectedHref = `/themes/${currentTheme}.css`;
   
   if (!themeLink.href || !themeLink.href.includes(`${currentTheme}.css`)) {
     switchTheme(currentTheme);

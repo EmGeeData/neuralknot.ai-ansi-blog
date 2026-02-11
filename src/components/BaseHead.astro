@@ -93,6 +93,9 @@ if (typeof image === 'string') {
 <!-- Font preloads -->
 <link rel="preload" href="/fonts/perfect-dos-vga.woff2" as="font" type="font/woff2" crossorigin />
 
+<!-- Default theme (overridden by theme-switcher.js if user has a preference) -->
+<link rel="stylesheet" href="/themes/terminal-green.css" data-theme-link="true" />
+
 <!-- SEO Meta Tags -->
 <title>{meta.title}</title>
 <meta name="description" content={meta.description} />
@@ -101,10 +104,8 @@ if (typeof image === 'string') {
 <link rel="canonical" href={meta.canonical} />
 
 <!-- Robots directives -->
-{meta.noindex && <meta name="robots" content="noindex" />}
-{meta.nofollow && <meta name="robots" content="nofollow" />}
 {(meta.noindex || meta.nofollow) && (
-	<meta name="robots" content={`${meta.noindex ? 'noindex' : 'index'}${meta.nofollow ? ',nofollow' : ',follow'}`} />
+	<meta name="robots" content={`${meta.noindex ? 'noindex' : 'index'},${meta.nofollow ? 'nofollow' : 'follow'}`} />
 )}
 
 <!-- Open Graph / Facebook -->

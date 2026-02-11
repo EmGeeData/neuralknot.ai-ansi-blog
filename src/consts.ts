@@ -34,7 +34,7 @@ export const FOOTER_CONFIG = {
 
   // Shared footer content
   common: {
-    copyright: "NeuralKnot.ai BBS © 2024",
+    copyright: "NeuralKnot.ai BBS © 2025",
     sysop: "TechHacker",
     cosysop: "CodeWeaver",
     systemName: "GruvNet v2.0",

@@ -1,0 +1,34 @@
+/* Dracula Theme */
+:root {
+    /* Background colors */
+    --bg0: #282a36;
+    --bg1: #353746;
+    --bg2: #44475a;
+    --bg3: #6272a4;
+    --bg4: #8695b7;
+    
+    /* Foreground colors */
+    --fg0: #f8f8f2;
+    --fg1: #f8f8f2;
+    --fg2: #e6e6e6;
+    --fg3: #d1d1d1;
+    --fg4: #bfbfbf;
+    
+    /* Accent colors */
+    --red: #ff5555;
+    --green: #50fa7b;
+    --yellow: #f1fa8c;
+    --blue: #8be9fd;
+    --purple: #bd93f9;
+    --aqua: #8be9fd;
+    --orange: #ffb86c;
+    
+    /* Dimmed accent colors */
+    --red-dim: #ff4444;
+    --green-dim: #40e96b;
+    --yellow-dim: #e1e97c;
+    --blue-dim: #7bd9ed;
+    --purple-dim: #ad83e9;
+    --aqua-dim: #7bd9ed;
+    --orange-dim: #efb86c;
+}

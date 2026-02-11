@@ -1,0 +1,34 @@
+/* Catppuccin Frappé Theme (Dark) */
+:root {
+    /* Base colors (dark theme - darkest to lightest) */
+    --bg0: #232634;  /* Crust */
+    --bg1: #292c3c;  /* Mantle */
+    --bg2: #303446;  /* Base */
+    --bg3: #414559;  /* Surface 0 */
+    --bg4: #51576d;  /* Surface 1 */
+    
+    /* Text colors (light on dark) */
+    --fg0: #c6d0f5;  /* Text */
+    --fg1: #c6d0f5;  /* Text */
+    --fg2: #b5bfe2;  /* Subtext 1 */
+    --fg3: #a5adce;  /* Subtext 0 */
+    --fg4: #949cbb;  /* Overlay 2 */
+    
+    /* Accent colors */
+    --red: #e78284;      /* Red */
+    --green: #a6d189;    /* Green */
+    --yellow: #e5c890;   /* Yellow */
+    --blue: #8caaee;     /* Blue */
+    --purple: #ca9ee6;   /* Mauve */
+    --aqua: #81c8be;     /* Teal */
+    --orange: #ef9f76;   /* Peach */
+    
+    /* Dimmed accent colors */
+    --red-dim: #ea999c;    /* Maroon */
+    --green-dim: #81c8be;  /* Teal (as muted green) */
+    --yellow-dim: #f2d5cf; /* Rosewater */
+    --blue-dim: #99d1db;   /* Sapphire */
+    --purple-dim: #f4b8e4; /* Pink */
+    --aqua-dim: #99d1db;   /* Sky */
+    --orange-dim: #eebebe; /* Flamingo */
+}

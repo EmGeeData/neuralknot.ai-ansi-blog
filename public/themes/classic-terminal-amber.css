@@ -1,0 +1,34 @@
+/* Classic Terminal Amber Theme - Authentic monochrome amber on black terminal */
+:root {
+    /* Dark grey/black progression */
+    --bg0: #0a0a0a;  /* Almost black */
+    --bg1: #111111;  /* Very dark grey */
+    --bg2: #1a1a1a;  /* Dark grey */
+    --bg3: #222222;  /* Medium dark grey */
+    --bg4: #2a2a2a;  /* Lighter dark grey */
+    
+    /* Amber text progression (classic terminal amber) */
+    --fg0: #ffaa00;  /* Bright terminal amber */
+    --fg1: #ff9900;  /* Primary amber */
+    --fg2: #ee8800;  /* Secondary amber */
+    --fg3: #dd7700;  /* Muted amber */
+    --fg4: #cc6600;  /* Dimmed amber */
+    
+    /* All accent colors use shades of terminal amber */
+    --red: #ffcc00;      /* Bright yellow-amber for errors */
+    --green: #ffaa00;    /* Classic bright amber */
+    --yellow: #ffdd00;   /* Bright yellow-amber */
+    --blue: #ff8800;     /* Orange-amber */
+    --purple: #ffbb00;   /* Light amber */
+    --aqua: #ff9944;     /* Amber-orange */
+    --orange: #ff7700;   /* Deep amber-orange */
+    
+    /* Dimmed amber variants */
+    --red-dim: #cc9900;    /* Dimmed yellow-amber */
+    --green-dim: #cc7700;  /* Dimmed amber */
+    --yellow-dim: #ccaa00; /* Dimmed yellow-amber */
+    --blue-dim: #cc6600;   /* Dimmed orange-amber */
+    --purple-dim: #cc8800; /* Dimmed light amber */
+    --aqua-dim: #cc7744;   /* Dimmed amber-orange */
+    --orange-dim: #cc5500; /* Dimmed deep amber */
+}

@@ -1,0 +1,34 @@
+/* Gruvbox Light Theme */
+:root {
+    /* Background colors */
+    --bg0: #fbf1c7;
+    --bg1: #ebdbb2;
+    --bg2: #d5c4a1;
+    --bg3: #bdae93;
+    --bg4: #a89984;
+    
+    /* Foreground colors */
+    --fg0: #282828;
+    --fg1: #3c3836;
+    --fg2: #504945;
+    --fg3: #665c54;
+    --fg4: #7c6f64;
+    
+    /* Accent colors */
+    --red: #cc241d;
+    --green: #98971a;
+    --yellow: #d79921;
+    --blue: #458588;
+    --purple: #b16286;
+    --aqua: #689d6a;
+    --orange: #d65d0e;
+    
+    /* Dimmed accent colors */
+    --red-dim: #9d0006;
+    --green-dim: #79740e;
+    --yellow-dim: #b57614;
+    --blue-dim: #076678;
+    --purple-dim: #8f3f71;
+    --aqua-dim: #427b58;
+    --orange-dim: #af3a03;
+}

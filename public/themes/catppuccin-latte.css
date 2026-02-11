@@ -1,0 +1,34 @@
+/* Catppuccin Latte Theme (Light) */
+:root {
+    /* Base colors (light theme - lightest to darkest) */
+    --bg0: #eff1f5;  /* Base */
+    --bg1: #e6e9ef;  /* Mantle */
+    --bg2: #dce0e8;  /* Crust */
+    --bg3: #ccd0da;  /* Surface 0 */
+    --bg4: #bcc0cc;  /* Surface 1 */
+    
+    /* Text colors (dark on light) */
+    --fg0: #4c4f69;  /* Text */
+    --fg1: #4c4f69;  /* Text */
+    --fg2: #5c5f77;  /* Subtext 1 */
+    --fg3: #6c6f85;  /* Subtext 0 */
+    --fg4: #7c7f93;  /* Overlay 2 */
+    
+    /* Accent colors */
+    --red: #d20f39;      /* Red */
+    --green: #40a02b;    /* Green */
+    --yellow: #df8e1d;   /* Yellow */
+    --blue: #1e66f5;     /* Blue */
+    --purple: #8839ef;   /* Mauve */
+    --aqua: #179299;     /* Teal */
+    --orange: #fe640b;   /* Peach */
+    
+    /* Dimmed accent colors */
+    --red-dim: #e64553;    /* Maroon */
+    --green-dim: #179299;  /* Teal (darker green) */
+    --yellow-dim: #dc8a78; /* Rosewater (muted yellow) */
+    --blue-dim: #209fb5;   /* Sapphire */
+    --purple-dim: #ea76cb; /* Pink */
+    --aqua-dim: #04a5e5;   /* Sky */
+    --orange-dim: #dd7878; /* Flamingo */
+}
