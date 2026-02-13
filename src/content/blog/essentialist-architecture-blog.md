@@ -9,7 +9,7 @@ draft: false
 heroImage: '../../assets/nk-article-2.png'
 seo:
   metaTitle: 'Essentialist Architecture: A Legal AI Paper Nobody Expected'
-  metaDescription: 'A solo attorney argues legal AI is fundamentally broken and proposes a universal reasoning engine grounded in quantum mechanics, Wittgenstein, and Zoroastrian philosophy.'
+  metaDescription: 'A solo attorney argues legal AI is fundamentally broken and proposes a universal reasoning engine grounded in quantum mechanics and Zoroastrian philosophy.'
   keywords: ['legal AI', 'essentialist architecture', 'domain-agnostic reasoning', 'wave function collapse', 'legal technology', 'Wittgenstein']
   author: 'Matt'
   articleSection: 'Technology'
