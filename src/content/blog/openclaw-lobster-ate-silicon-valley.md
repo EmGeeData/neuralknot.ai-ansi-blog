@@ -6,7 +6,7 @@ category: 'tech-analysis'
 tags: ['artificial-intelligence', 'openclaw', 'ai-agents', 'cybersecurity', 'open-source']
 featured: true
 draft: false
-heroImage: '../../assets/nk-article-1'
+heroImage: '../../assets/nk-article-1.png'
 seo:
   metaTitle: 'OpenClaw Explained: The AI Agent That Does Things'
   metaDescription: 'OpenClaw went from side project to 145K GitHub stars in weeks. How an Austrian developers lobster-themed AI agent broke the internet and your security model.'
