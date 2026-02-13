@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # user-specific files
 backup/
+
+# working/scratch directories
+graphics_working/
